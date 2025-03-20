@@ -26,8 +26,8 @@ const Hero: React.FC = () => {
               Explore Tools
               <ChevronRight className="ml-1 h-4 w-4" />
             </a>
-            <a href="#contact" className="btn-secondary">
-              Request Demo
+            <a href="#tools" className="btn-secondary">
+              Compare Oil & Gas AI Tools
             </a>
           </div>
         </div>
