@@ -1,7 +1,9 @@
+
 import React from "react";
 import AnimatedLogo from "./AnimatedLogo";
 import { GlassCard } from "./ui-custom/GlassCard";
 import { ChevronRight } from "lucide-react";
+
 const Hero: React.FC = () => {
   return <section className="min-h-screen flex flex-col justify-center pt-40 md:pt-32 pb-12">
       <div className="container mx-auto px-4">
@@ -13,7 +15,10 @@ const Hero: React.FC = () => {
             <span className="text-energy-800"> Oil & Gas Industry</span>
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl text-energy-600 max-w-3xl mx-auto mb-8 text-balance">A comprehensive collection of 10 oil & gas industry specialized AI tools designed to revolutionize operations, optimize workflows, and drive sustainable growth in the energy sector.</p>
+          <p className="text-base sm:text-lg md:text-xl text-energy-600 max-w-3xl mx-auto mb-8 text-balance">
+            Unleashing a suite of 10 advanced AI tools tailored specifically for the oil & gas sector, 
+            designed to transform operations, streamline processes, and fuel sustainable growth.
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mt-2 mb-6">
             <a href="#tools" className="btn-primary flex items-center justify-center">
@@ -87,4 +92,5 @@ const Hero: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Hero;
