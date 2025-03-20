@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 import { GlassCard } from "./ui-custom/GlassCard";
 import { tools } from "@/lib/tools";
 import CyberpunkLogo from "./CyberpunkLogo";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 interface NavbarProps {
   className?: string;
@@ -13,6 +16,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +46,10 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     name: tool.name,
     href: tool.link
   }));
+
+  const handleNavLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header
@@ -116,71 +124,79 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white focus:outline-none"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </GlassCard>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <GlassCard 
-            variant="dark" 
-            intensity="high" 
-            className="md:hidden mt-2 py-4 px-4 animate-slide-down border border-cyan-500/20"
-          >
-            <nav className="flex flex-col space-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-white hover:text-cyan-400 transition-colors font-medium py-2 border-b border-energy-800"
+          {/* Mobile Menu Button with Sheet Component */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <button
+                className="md:hidden text-white focus:outline-none"
+              >
+                <Menu size={24} />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="left" className="p-0 w-[85%] max-w-xs bg-energy-950/95 backdrop-blur-lg border-energy-800">
+              <div className="py-4 px-4 border-b border-energy-800">
+                <CyberpunkLogo size="sm" />
+                <button 
                   onClick={() => setMobileMenuOpen(false)}
+                  className="absolute top-4 right-4 text-white focus:outline-none"
                 >
-                  {link.name}
-                </a>
-              ))}
-              <div className="py-2">
-                <div className="font-medium text-white mb-2">AI Tools:</div>
-                <div className="grid grid-cols-1 gap-y-2">
-                  {toolLinks.map((tool, index) => (
+                  <X size={20} />
+                </button>
+              </div>
+              <nav className="flex flex-col p-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-white hover:text-cyan-400 transition-colors font-medium py-3 border-b border-energy-800 flex items-center"
+                    onClick={handleNavLinkClick}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                <div className="py-4">
+                  <div className="font-medium text-white mb-3">AI Tools:</div>
+                  <div className="grid grid-cols-1 gap-y-3 pl-2">
+                    {toolLinks.map((tool, index) => (
+                      <a
+                        key={index}
+                        href={tool.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-energy-300 hover:text-cyan-400 transition-colors text-sm flex items-center"
+                        onClick={handleNavLinkClick}
+                      >
+                        {tool.name}
+                        <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    ))}
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-energy-800">
                     <a
-                      key={index}
-                      href={tool.href}
+                      href="https://www.aiwebtools.ai"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-energy-300 hover:text-cyan-400 transition-colors text-sm flex items-center pl-2"
+                      className="text-energy-200 hover:text-cyan-400 transition-colors font-medium flex items-center"
+                      onClick={handleNavLinkClick}
                     >
-                      {tool.name}
-                      <ExternalLink className="ml-1 h-3 w-3" />
+                      More AI Tools
+                      <ExternalLink className="ml-1.5 h-4 w-4" />
                     </a>
-                  ))}
+                  </div>
                 </div>
-                <div className="mt-3 pt-2 border-t border-energy-800">
+                <div className="mt-4">
                   <a
-                    href="https://www.aiwebtools.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-energy-200 hover:text-cyan-400 transition-colors font-medium flex items-center"
+                    href="#tools"
+                    className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 px-4 rounded-full font-medium block"
+                    onClick={handleNavLinkClick}
                   >
-                    More AI Tools
-                    <ExternalLink className="ml-1.5 h-4 w-4" />
+                    Compare Oil and Gas AI Tools
                   </a>
                 </div>
-              </div>
-              <a
-                href="#tools"
-                className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 rounded-full font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Compare Oil and Gas AI Tools
-              </a>
-            </nav>
-          </GlassCard>
-        )}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </GlassCard>
       </div>
     </header>
   );
