@@ -21,10 +21,10 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   };
 
   const subtitleSizes = {
-    sm: "text-[6px] sm:text-xs", // Further reduced for better mobile display
-    md: "text-[8px] sm:text-sm", // Reduced from 10px
-    lg: "text-[10px] sm:text-base", // Added explicit mobile size
-    xl: "text-[10px] sm:text-sm md:text-lg" // Reduced for mobile
+    sm: "text-[5px] sm:text-xs", // Further reduced for better mobile display
+    md: "text-[6px] sm:text-sm", // Reduced from 8px
+    lg: "text-[8px] sm:text-base", // Reduced from 10px
+    xl: "text-[9px] sm:text-sm md:text-lg" // Reduced for mobile
   };
 
   const iconSizes = {
@@ -35,10 +35,10 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   };
 
   const containerWidths = {
-    sm: "max-w-[160px] sm:max-w-none", // Reduced from 180px
-    md: "max-w-[190px] sm:max-w-none", // Reduced from 220px
-    lg: "max-w-[220px] sm:max-w-none", // Reduced from 240px
-    xl: "max-w-[260px] sm:max-w-none", // Reduced from 280px
+    sm: "max-w-[150px] sm:max-w-none", // Reduced from 160px
+    md: "max-w-[170px] sm:max-w-none", // Reduced from 190px
+    lg: "max-w-[200px] sm:max-w-none", // Reduced from 220px
+    xl: "max-w-[230px] sm:max-w-none", // Reduced from 260px
   };
 
   useEffect(() => {

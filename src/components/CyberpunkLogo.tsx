@@ -15,8 +15,8 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
   };
 
   const subtitleSizes = {
-    sm: "text-[7px] sm:text-xs", // Further reduced for mobile
-    md: "text-[9px] sm:text-sm",
+    sm: "text-[6px] sm:text-xs", // Further reduced for better mobile display
+    md: "text-[8px] sm:text-sm",
     lg: "text-xs sm:text-base",
   };
 
@@ -28,9 +28,9 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
 
   // Adjusted container width classes for better mobile display
   const containerWidths = {
-    sm: "max-w-[200px] sm:max-w-none", // Reduced from 220px
-    md: "max-w-[240px] sm:max-w-none", // Reduced from 260px
-    lg: "max-w-[280px] sm:max-w-none", // Reduced from 300px
+    sm: "max-w-[180px] sm:max-w-none", // Reduced from 200px
+    md: "max-w-[220px] sm:max-w-none", // Reduced from 240px
+    lg: "max-w-[260px] sm:max-w-none", // Reduced from 280px
   };
 
   return (
