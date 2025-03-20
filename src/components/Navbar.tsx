@@ -8,6 +8,7 @@ import CyberpunkLogo from "./CyberpunkLogo";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { ScrollArea } from "./ui/scroll-area";
 
 interface NavbarProps {
   className?: string;
@@ -134,66 +135,70 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               </button>
             </SheetTrigger>
             <SheetContent side="left" className="p-0 w-[85%] max-w-xs bg-energy-950/95 backdrop-blur-lg border-energy-800">
-              <div className="py-4 px-4 border-b border-energy-800">
+              <div className="py-4 px-4 border-b border-energy-800 flex items-center justify-between">
                 <CyberpunkLogo size="sm" />
                 <button 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="absolute top-4 right-4 text-white focus:outline-none"
+                  className="text-white focus:outline-none"
                 >
                   <X size={20} />
                 </button>
               </div>
-              <nav className="flex flex-col p-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-white hover:text-cyan-400 transition-colors font-medium py-3 border-b border-energy-800 flex items-center"
-                    onClick={handleNavLinkClick}
-                  >
-                    {link.name}
-                  </a>
-                ))}
-                <div className="py-4">
-                  <div className="font-medium text-white mb-3">AI Tools:</div>
-                  <div className="grid grid-cols-1 gap-y-3 pl-2">
-                    {toolLinks.map((tool, index) => (
-                      <a
-                        key={index}
-                        href={tool.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-energy-300 hover:text-cyan-400 transition-colors text-sm flex items-center"
-                        onClick={handleNavLinkClick}
-                      >
-                        {tool.name}
-                        <ExternalLink className="ml-1 h-3 w-3" />
-                      </a>
-                    ))}
-                  </div>
-                  <div className="mt-4 pt-3 border-t border-energy-800">
+              
+              {/* Scrollable Navigation Area */}
+              <ScrollArea className="h-[calc(100vh-80px)]">
+                <nav className="flex flex-col p-4">
+                  {navLinks.map((link) => (
                     <a
-                      href="https://www.aiwebtools.ai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-energy-200 hover:text-cyan-400 transition-colors font-medium flex items-center"
+                      key={link.name}
+                      href={link.href}
+                      className="text-white hover:text-cyan-400 transition-colors font-medium py-3 border-b border-energy-800 flex items-center"
                       onClick={handleNavLinkClick}
                     >
-                      More AI Tools
-                      <ExternalLink className="ml-1.5 h-4 w-4" />
+                      {link.name}
+                    </a>
+                  ))}
+                  <div className="py-4">
+                    <div className="font-medium text-white mb-3">AI Tools:</div>
+                    <div className="grid grid-cols-1 gap-y-3 pl-2">
+                      {toolLinks.map((tool, index) => (
+                        <a
+                          key={index}
+                          href={tool.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-energy-300 hover:text-cyan-400 transition-colors text-sm flex items-center"
+                          onClick={handleNavLinkClick}
+                        >
+                          {tool.name}
+                          <ExternalLink className="ml-1 h-3 w-3" />
+                        </a>
+                      ))}
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-energy-800">
+                      <a
+                        href="https://www.aiwebtools.ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-energy-200 hover:text-cyan-400 transition-colors font-medium flex items-center"
+                        onClick={handleNavLinkClick}
+                      >
+                        More AI Tools
+                        <ExternalLink className="ml-1.5 h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="mt-4 pb-6">
+                    <a
+                      href="#tools"
+                      className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 px-4 rounded-full font-medium block"
+                      onClick={handleNavLinkClick}
+                    >
+                      Compare Oil and Gas AI Tools
                     </a>
                   </div>
-                </div>
-                <div className="mt-4">
-                  <a
-                    href="#tools"
-                    className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 px-4 rounded-full font-medium block"
-                    onClick={handleNavLinkClick}
-                  >
-                    Compare Oil and Gas AI Tools
-                  </a>
-                </div>
-              </nav>
+                </nav>
+              </ScrollArea>
             </SheetContent>
           </Sheet>
         </GlassCard>
