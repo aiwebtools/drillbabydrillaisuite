@@ -1,6 +1,6 @@
 import React from "react";
-import AnimatedLogo from "./AnimatedLogo";
 import { ExternalLink } from "lucide-react";
+import CyberpunkLogo from "./CyberpunkLogo";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="min-w-0 overflow-hidden">
             <div className="w-full overflow-visible px-2 sm:px-0">
-              <AnimatedLogo size="sm" className="mb-4 transform-none" />
+              <CyberpunkLogo size="sm" />
             </div>
             <p className="text-energy-300 mb-4 max-w-xs">
               Revolutionary AI Suite for the Oil & Gas Industry delivering cutting-edge solutions for operational excellence.
@@ -149,4 +149,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
