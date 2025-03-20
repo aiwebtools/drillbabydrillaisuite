@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "py-2" : "py-4",
+        scrolled ? "py-2 backdrop-blur-md bg-energy-950/80" : "py-4",
         className
       )}
     >
