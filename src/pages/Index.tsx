@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -6,8 +5,9 @@ import ToolsGrid from "@/components/ToolsGrid";
 import Footer from "@/components/Footer";
 import FaqSection from "@/components/FaqSection";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
-import { GlassCard } from "@/components/ui-custom/GlassCard";
-import { Drill, Shield, Cpu, BarChart } from "lucide-react";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -53,23 +53,17 @@ const Index: React.FC = () => {
       {/* Tool selection grid - moved up to be more prominent */}
       <ToolsGrid />
 
+      {/* YouTube video section */}
       <section className="py-16 px-4 bg-energy-950 relative overflow-hidden">
         <div className="container mx-auto max-w-5xl" data-animate="true">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">
             <span className="text-gradient">Featured Video</span>
           </h2>
-          <GlassCard variant="dark" className="overflow-hidden rounded-xl aspect-video">
-            <iframe 
-              width="100%" 
-              height="100%" 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&controls=1&origin=https://example.com&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1&hd=1" 
-              title="DRILL BABY DRILL AI SUITE Demo" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
-          </GlassCard>
+          <YouTubeEmbed 
+            videoId="dQw4w9WgXcQ" 
+            title="DRILL BABY DRILL AI SUITE Demo" 
+            className="shadow-lg shadow-drill-600/20"
+          />
         </div>
         
         {/* Background elements */}
@@ -77,7 +71,9 @@ const Index: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-drill-600/5 rounded-full -ml-40 -mb-40" />
       </section>
 
-      <section id="about" className="py-20 bg-energy-950">
+      <HowItWorksSection />
+
+      <section id="about" className="py-20 bg-energy-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16" data-animate="true">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
@@ -178,6 +174,8 @@ const Index: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       <section className="py-24 bg-energy-900 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">

@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from "react";
-import AnimatedLogo from "./AnimatedLogo";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlassCard } from "./ui-custom/GlassCard";
 import { tools } from "@/lib/tools";
+import CyberpunkLogo from "./CyberpunkLogo";
 
 interface NavbarProps {
   className?: string;
@@ -31,6 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const navLinks = [
     { name: "Home", href: "#" },
     { name: "Tools", href: "#tools" },
+    { name: "How It Works", href: "#how-it-works" },
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
     { name: "Disclaimer", href: "#disclaimer" },
@@ -55,12 +56,12 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           variant="dark"
           intensity={scrolled ? "medium" : "low"}
           className={cn(
-            "flex items-center justify-between py-2 px-4 transition-all duration-300",
-            scrolled ? "shadow-md" : ""
+            "flex items-center justify-between py-2 px-4 transition-all duration-300 border-cyber-light/20",
+            scrolled ? "shadow-[0_0_15px_rgba(0,255,255,0.15)]" : ""
           )}
         >
           <div className="flex items-center">
-            <AnimatedLogo size="sm" />
+            <CyberpunkLogo size="sm" />
           </div>
 
           {/* Desktop Navigation */}
@@ -69,25 +70,25 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-drill-400 transition-colors font-medium"
+                className="text-white hover:text-cyan-400 transition-colors font-medium"
               >
                 {link.name}
               </a>
             ))}
             <div className="relative group">
-              <button className="text-white hover:text-drill-400 transition-colors font-medium flex items-center">
+              <button className="text-white hover:text-cyan-400 transition-colors font-medium flex items-center">
                 AI Tools
               </button>
-              <div className="absolute left-0 mt-2 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <GlassCard variant="dark" intensity="high" className="py-2 px-1">
-                  <div className="flex flex-col space-y-2">
+              <div className="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <GlassCard variant="dark" intensity="high" className="py-2 px-1 border border-cyan-500/20">
+                  <div className="flex flex-col space-y-1">
                     {toolLinks.map((tool, index) => (
                       <a
                         key={index}
                         href={tool.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-energy-200 hover:text-drill-400 transition-colors text-sm px-3 py-1.5 flex items-center"
+                        className="text-energy-200 hover:text-cyan-400 transition-colors text-sm px-3 py-1.5 flex items-center"
                       >
                         {tool.name}
                         <ExternalLink className="ml-1.5 h-3 w-3" />
@@ -98,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                       href="https://www.aiwebtools.ai"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-energy-200 hover:text-drill-400 transition-colors text-sm font-medium px-3 py-1.5 flex items-center"
+                      className="text-energy-200 hover:text-cyan-400 transition-colors text-sm font-medium px-3 py-1.5 flex items-center"
                     >
                       More AI Tools
                       <ExternalLink className="ml-1.5 h-3 w-3" />
@@ -109,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </div>
             <a 
               href="#contact" 
-              className="bg-drill-600 hover:bg-drill-500 text-white px-4 py-2 rounded-full font-medium transition-colors"
+              className="bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white px-4 py-2 rounded-full font-medium transition-colors shadow-lg shadow-purple-700/20 hover:shadow-xl hover:shadow-purple-700/40"
             >
               Get Started
             </a>
@@ -129,14 +130,14 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <GlassCard 
             variant="dark" 
             intensity="high" 
-            className="md:hidden mt-2 py-4 px-4 animate-slide-down"
+            className="md:hidden mt-2 py-4 px-4 animate-slide-down border border-cyan-500/20"
           >
             <nav className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-white hover:text-drill-400 transition-colors font-medium py-2 border-b border-energy-800"
+                  className="text-white hover:text-cyan-400 transition-colors font-medium py-2 border-b border-energy-800"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -151,7 +152,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                       href={tool.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-energy-300 hover:text-drill-400 transition-colors text-sm flex items-center pl-2"
+                      className="text-energy-300 hover:text-cyan-400 transition-colors text-sm flex items-center pl-2"
                     >
                       {tool.name}
                       <ExternalLink className="ml-1 h-3 w-3" />
@@ -163,7 +164,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                     href="https://www.aiwebtools.ai"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-energy-200 hover:text-drill-400 transition-colors font-medium flex items-center"
+                    className="text-energy-200 hover:text-cyan-400 transition-colors font-medium flex items-center"
                   >
                     More AI Tools
                     <ExternalLink className="ml-1.5 h-4 w-4" />
@@ -172,7 +173,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               </div>
               <a
                 href="#contact"
-                className="bg-drill-600 text-white text-center py-3 rounded-full font-medium"
+                className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 rounded-full font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get Started
