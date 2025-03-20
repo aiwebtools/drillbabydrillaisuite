@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -34,12 +35,10 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
   const navLinks = [
     { name: "Home", href: "#" },
-    { name: "Tools", href: "#tools" },
     { name: "How It Works", href: "#how-it-works" },
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
     { name: "Disclaimer", href: "#disclaimer" },
-    { name: "Compare Tools", href: "#tools" },
   ];
 
   const toolLinks = tools.map(tool => ({
@@ -84,9 +83,11 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                 {link.name}
               </a>
             ))}
+            
+            {/* Oil & Gas AI Tools dropdown */}
             <div className="relative group">
               <button className="text-white hover:text-cyan-400 transition-colors font-medium flex items-center">
-                AI Tools
+                Select Oil & Gas AI
               </button>
               <div className="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <GlassCard variant="dark" intensity="high" className="py-2 px-1 border border-cyan-500/20">
@@ -103,25 +104,28 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                         <ExternalLink className="ml-1.5 h-3 w-3" />
                       </a>
                     ))}
-                    <div className="border-t border-energy-700 my-1"></div>
-                    <a
-                      href="https://www.aiwebtools.ai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-energy-200 hover:text-cyan-400 transition-colors text-sm font-medium px-3 py-1.5 flex items-center"
-                    >
-                      More AI Tools
-                      <ExternalLink className="ml-1.5 h-3 w-3" />
-                    </a>
                   </div>
                 </GlassCard>
               </div>
             </div>
+            
+            {/* More AI Tools link */}
+            <a 
+              href="https://www.aiwebtools.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-cyan-400 transition-colors font-medium flex items-center"
+            >
+              More AI Tools
+              <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
+            </a>
+            
+            {/* Compare Tools button */}
             <a 
               href="#tools" 
               className="bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white px-4 py-2 rounded-full font-medium transition-colors shadow-lg shadow-purple-700/20 hover:shadow-xl hover:shadow-purple-700/40"
             >
-              Compare Oil and Gas AI Tools
+              Compare Oil & Gas AI Tools
             </a>
           </nav>
 
@@ -157,7 +161,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                     </a>
                   ))}
                   <div className="py-4">
-                    <div className="font-medium text-white mb-3">AI Tools:</div>
+                    <div className="font-medium text-white mb-3">Select Oil & Gas AI:</div>
                     <div className="grid grid-cols-1 gap-y-3 pl-2">
                       {toolLinks.map((tool, index) => (
                         <a
@@ -192,7 +196,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                       className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 px-4 rounded-full font-medium block"
                       onClick={handleNavLinkClick}
                     >
-                      Compare Oil and Gas AI Tools
+                      Compare Oil & Gas AI Tools
                     </a>
                   </div>
                 </nav>

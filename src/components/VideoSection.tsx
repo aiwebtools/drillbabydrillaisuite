@@ -1,6 +1,7 @@
 
 import React from "react";
 import YouTubeEmbed from "./YouTubeEmbed";
+import { Button } from "./ui/button";
 
 const VideoSection: React.FC = () => {
   return (
@@ -17,6 +18,15 @@ const VideoSection: React.FC = () => {
           title="DRILL BABY DRILL AI SUITE Demo" 
           className="shadow-lg shadow-drill-600/20"
         />
+        
+        <div className="mt-8 text-center">
+          <a 
+            href="#tools" 
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            Compare Oil & Gas AI Tools
+          </a>
+        </div>
       </div>
       
       {/* Background elements */}
