@@ -9,28 +9,28 @@ interface CyberpunkLogoProps {
 
 const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className }) => {
   const sizeClasses = {
-    sm: "text-lg sm:text-xl",
-    md: "text-xl sm:text-2xl",
-    lg: "text-2xl sm:text-3xl",
+    sm: "text-md sm:text-xl", // Reduced size on mobile
+    md: "text-lg sm:text-2xl",
+    lg: "text-xl sm:text-3xl",
   };
 
   const subtitleSizes = {
-    sm: "text-[8px] sm:text-xs",
-    md: "text-xs sm:text-sm",
+    sm: "text-[7px] sm:text-xs", // Further reduced for mobile
+    md: "text-[9px] sm:text-sm",
     lg: "text-xs sm:text-base",
   };
 
   const iconSizes = {
-    sm: 18,  // Reduced from 20
-    md: 24,  // Reduced from 26
-    lg: 30,  // Reduced from 32
+    sm: 16,  // Further reduced from 18
+    md: 20,  // Further reduced from 24
+    lg: 26,  // Reduced from 30
   };
 
-  // Added container width classes based on size
+  // Adjusted container width classes for better mobile display
   const containerWidths = {
-    sm: "max-w-[220px] sm:max-w-none",
-    md: "max-w-[260px] sm:max-w-none",
-    lg: "max-w-[300px] sm:max-w-none",
+    sm: "max-w-[200px] sm:max-w-none", // Reduced from 220px
+    md: "max-w-[240px] sm:max-w-none", // Reduced from 260px
+    lg: "max-w-[280px] sm:max-w-none", // Reduced from 300px
   };
 
   return (
@@ -39,8 +39,8 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
         {/* Glow effect */}
         <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/50 to-purple-600/50 rounded-lg blur-xl opacity-70"></div>
         
-        {/* Main logo container - added overflow-hidden for mobile */}
-        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-1.5 sm:px-4 py-1.5 sm:py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20 overflow-hidden sm:overflow-visible">
+        {/* Main logo container - improved overflow handling */}
+        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-1 sm:px-4 py-1 sm:py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20 overflow-hidden">
           <div className="relative mr-1 sm:mr-3 flex-shrink-0">
             {/* Icon glow */}
             <div className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-50"></div>
