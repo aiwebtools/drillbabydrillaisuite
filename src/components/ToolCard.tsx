@@ -45,26 +45,42 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, onClick, index }) => {
           {tool.shortDescription}
         </p>
         
-        <div className="flex justify-between items-center mt-6">
-          <button 
-            className="flex items-center text-sm font-medium text-cyan-400 group-hover:translate-x-1 transition-transform"
+        <div className="flex flex-col gap-3">
+          <Button 
+            variant="outline" 
+            className={cn(
+              "w-full justify-center text-white border-energy-700 hover:text-cyan-400 hover:border-cyan-400",
+              tool.primaryColor
+            )}
             onClick={(e) => {
               e.stopPropagation();
-              onClick(tool.id);
+              window.open(tool.link, "_blank", "noopener,noreferrer");
             }}
           >
-            Learn more <ChevronRight className="ml-1 h-4 w-4" />
-          </button>
+            Use {tool.name.replace(" GPT", "").replace(" AI", "")} Now
+          </Button>
           
-          <a 
-            href={tool.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="p-2 rounded-full bg-energy-800 hover:bg-energy-700 text-cyan-400 transition-colors"
-          >
-            <ExternalLink className="w-4 h-4" />
-          </a>
+          <div className="flex justify-between items-center">
+            <button 
+              className="flex items-center text-sm font-medium text-cyan-400 group-hover:translate-x-1 transition-transform"
+              onClick={(e) => {
+                e.stopPropagation();
+                onClick(tool.id);
+              }}
+            >
+              Learn more <ChevronRight className="ml-1 h-4 w-4" />
+            </button>
+            
+            <a 
+              href={tool.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="p-2 rounded-full bg-energy-800 hover:bg-energy-700 text-cyan-400 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
     </GlassCard>
