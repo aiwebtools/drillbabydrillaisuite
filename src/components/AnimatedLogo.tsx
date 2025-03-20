@@ -69,16 +69,16 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
       ref={logoRef}
       className={`flex flex-col transition-transform duration-200 ease-out ${sizeClasses[size]} ${className}`}
     >
-      <div className="flex items-center">
-        <div className="mr-2 text-drill-600">
+      <div className="flex items-center flex-nowrap whitespace-nowrap">
+        <div className="mr-2 text-drill-600 flex-shrink-0">
           <Drill size={iconSizes[size]} className="animate-float" />
         </div>
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start min-w-0">
           <div className="flex">
-            <span className="text-gradient font-cyber font-bold">DRILL BABY DRILL</span>
+            <span className="text-gradient font-cyber font-bold whitespace-nowrap">DRILL BABY DRILL</span>
           </div>
           <div className="flex items-center -mt-1">
-            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal`}>
+            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal whitespace-nowrap`}>
               AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
             </span>
           </div>

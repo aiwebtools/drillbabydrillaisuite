@@ -23,8 +23,10 @@ const Footer: React.FC = () => {
     <footer id="contact" className="bg-energy-950 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
-            <AnimatedLogo size="md" className="mb-4" />
+          <div className="min-w-0 overflow-hidden">
+            <div className="w-full overflow-visible">
+              <AnimatedLogo size="md" className="mb-4 transform-none" />
+            </div>
             <p className="text-energy-300 mb-4 max-w-xs">
               Revolutionary AI Suite for the Oil & Gas Industry delivering cutting-edge solutions for operational excellence.
             </p>
