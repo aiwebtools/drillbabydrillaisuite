@@ -1,26 +1,19 @@
-
 import React, { useState } from "react";
 import { tools } from "@/lib/tools";
 import ToolCard from "./ToolCard";
 import ToolModal from "./ToolModal";
 import { Button } from "./ui/button";
 import { Sparkles } from "lucide-react";
-
 const ToolsGrid: React.FC = () => {
   const [selectedToolId, setSelectedToolId] = useState<number | null>(null);
-  
   const selectedTool = tools.find(tool => tool.id === selectedToolId) || null;
-  
   const handleOpenModal = (id: number) => {
     setSelectedToolId(id);
   };
-  
   const handleCloseModal = () => {
     setSelectedToolId(null);
   };
-
-  return (
-    <section id="tools" className="py-20 bg-energy-950 relative overflow-hidden">
+  return <section id="tools" className="py-20 bg-energy-950 relative overflow-hidden">
       {/* Cyberpunk grid background */}
       <div className="absolute inset-0 bg-cyber-grid bg-[size:50px_50px] opacity-5"></div>
       
@@ -37,7 +30,7 @@ const ToolsGrid: React.FC = () => {
             </div>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Our <span className="text-gradient">Advanced AI Tools</span>
+            Our <span className="text-gradient">Advanced Oil &amp; Gas Industry AI Tools</span>
           </h2>
           <p className="text-lg text-energy-400 max-w-2xl mx-auto">
             Discover our suite of specialized AI tools designed to transform every aspect
@@ -46,37 +39,17 @@ const ToolsGrid: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {tools.map((tool, index) => (
-            <ToolCard 
-              key={tool.id} 
-              tool={tool} 
-              onClick={handleOpenModal} 
-              index={index}
-            />
-          ))}
+          {tools.map((tool, index) => <ToolCard key={tool.id} tool={tool} onClick={handleOpenModal} index={index} />)}
         </div>
         
         <div className="mt-12 text-center">
-          <a 
-            href="https://www.aiwebtools.ai" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-semibold shadow-lg shadow-purple-700/20 hover:shadow-xl hover:shadow-purple-700/40 transition-all duration-300"
-          >
+          <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-semibold shadow-lg shadow-purple-700/20 hover:shadow-xl hover:shadow-purple-700/40 transition-all duration-300">
             Explore More AI Tools
           </a>
         </div>
       </div>
       
-      {selectedTool && (
-        <ToolModal 
-          tool={selectedTool} 
-          isOpen={!!selectedToolId} 
-          onClose={handleCloseModal} 
-        />
-      )}
-    </section>
-  );
+      {selectedTool && <ToolModal tool={selectedTool} isOpen={!!selectedToolId} onClose={handleCloseModal} />}
+    </section>;
 };
-
 export default ToolsGrid;
