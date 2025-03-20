@@ -53,8 +53,8 @@ const Index: React.FC = () => {
     <div className="flex flex-col min-h-screen overflow-hidden bg-energy-950 text-white">
       <Navbar />
       <Hero />
-      <ToolsGrid />
       <FeaturedImageSection />
+      <ToolsGrid />
       <VideoSection />
       <HowItWorksSection />
       <AboutSection />
