@@ -1,166 +1,153 @@
 
-import { Drill, Database, TrendingUp, FileCode, Users, Search, Settings, FileText, AlertTriangle, Info } from "lucide-react";
-
 export interface Tool {
-  id: number;
+  id: string;
   name: string;
-  shortDescription: string;
-  icon: any;
-  iconBg: string;
   description: string;
+  icon: string;
   features: string[];
-  primaryColor: string;
+  link: string;
+  color: string;
 }
 
 export const tools: Tool[] = [
   {
-    id: 1,
+    id: "petromaster-ai",
     name: "PetroMaster AI",
-    shortDescription: "Advanced workforce training & operational management",
-    icon: Users,
-    iconBg: "bg-blue-50",
-    primaryColor: "text-blue-600",
-    description: "A comprehensive AI solution that revolutionizes the oil & gas industry through workforce training, energy transition strategy, automated reporting, & global operational management.",
+    description: "Advanced, comprehensive AI solution that revolutionizes the oil & gas industry through workforce training, energy transition strategy, automated reporting, & global operational management.",
+    icon: "graduation-cap",
     features: [
       "Advanced Workforce Training & Certification",
       "Strategic Energy Transition Insights",
       "Automated Industry Documentation & Reporting",
-      "Global Operational Management & Advisory"
-    ]
+      "Global Operational Management & Advisory",
+    ],
+    link: "https://chatgpt.com/g/g-67db8234c568819194e19bbc67c5801b-petromaster-ai",
+    color: "drill-600",
   },
   {
-    id: 2,
+    id: "petrotech-innovator",
     name: "PetroTech Innovator",
-    shortDescription: "Cutting-edge technology integration for operations",
-    icon: Settings,
-    iconBg: "bg-purple-50",
-    primaryColor: "text-purple-600",
-    description: "Guides the integration of cutting-edge technologies into oil & gas operations, focusing on rig automation, robotics, drones, digital twin creation, & AI-driven predictive analytics.",
+    description: "Cutting-edge technology integration for oil & gas operations, focusing on rig automation, robotics, drones, digital twin creation, & AI-driven predictive analytics.",
+    icon: "cpu",
     features: [
       "Automation Solutions Integration",
       "Robotics & Remote Operation Advice",
       "Digital Twin Scenario Simulation",
-      "AI-Driven Predictive Analytics"
-    ]
+      "AI-Driven Predictive Analytics",
+    ],
+    link: "https://chatgpt.com/g/g-67db7f6195848191ae0c02dddfb3b1d9-petrotech-innovator-gpt",
+    color: "amber-600",
   },
   {
-    id: 3,
+    id: "oil-logistics",
     name: "OilLogistics GPT",
-    shortDescription: "Full-service logistical planning & optimization",
-    icon: TrendingUp,
-    iconBg: "bg-amber-50",
-    primaryColor: "text-amber-600",
-    description: "Provides full-service logistical planning for oil & gas companies, covering supply chains, cross-border logistics, asset tracking, & crew management.",
+    description: "Full-service logistical planning for oil & gas companies, covering supply chains, cross-border logistics, asset tracking, & crew management.",
+    icon: "truck",
     features: [
       "Supply Chain Optimization",
-      "Automated Crew Scheduling & Management",
       "Cross-Border Logistics & Compliance",
-      "Fleet & Cargo Management"
-    ]
+      "Fleet & Cargo Management",
+      "AI-Driven Logistics Intelligence",
+    ],
+    link: "https://chatgpt.com/g/g-67db7da1ea288191856f5c5a58362a62-oillogistics-gpt",
+    color: "blue-600",
   },
   {
-    id: 4,
+    id: "green-drill",
     name: "GreenDrill GPT",
-    shortDescription: "Sustainable drilling practices & environmental management",
-    icon: Info,
-    iconBg: "bg-green-50",
-    primaryColor: "text-green-600",
-    description: "Assists in sustainable drilling practices, carbon footprint management, renewable integration, water conservation, & environmental impact reduction.",
+    description: "Sustainable drilling practices, carbon footprint management, renewable integration, water conservation, & environmental impact reduction solutions.",
+    icon: "leaf",
     features: [
       "Environmental Impact Assessments",
       "Emission Monitoring & Reduction Strategies",
       "Sustainable Drilling Techniques",
-      "Water Conservation & Management"
-    ]
+      "Water Conservation & Management",
+    ],
+    link: "https://chatgpt.com/g/g-67db7bcdb97481919a202f3ab2200e45-greendrill-gpt",
+    color: "green-600",
   },
   {
-    id: 5,
+    id: "petro-compliance",
     name: "PetroCompliance GPT",
-    shortDescription: "Regulatory & legal compliance solutions",
-    icon: FileText,
-    iconBg: "bg-red-50",
-    primaryColor: "text-red-600",
-    description: "Provides AI-powered regulatory & legal compliance solutions, managing permitting, global regulatory changes, ESG metrics, & automated reporting.",
+    description: "AI-powered regulatory & legal compliance solutions, managing permitting, global regulatory changes, ESG metrics, & automated reporting.",
+    icon: "shield-check",
     features: [
-      "RealTime Regulation Updates",
+      "Real-Time Regulation Updates",
       "Permit Acquisition Guidance",
       "ESG & Sustainability Compliance Tracking",
-      "Automated Compliance Reporting"
-    ]
+      "Automated Compliance Reporting",
+    ],
+    link: "https://chatgpt.com/g/g-67db796e1664819193bb1fdda36c81e3-petrocompliance-gpt",
+    color: "purple-600",
   },
   {
-    id: 6,
+    id: "petro-financial",
     name: "PetroFinancial GPT",
-    shortDescription: "Financial analysis & investment strategies",
-    icon: Database,
-    iconBg: "bg-indigo-50",
-    primaryColor: "text-indigo-600",
-    description: "Provides comprehensive financial analysis, investment strategies, real-time market predictions, & profitability assessments for oil & gas projects.",
+    description: "Comprehensive financial analysis, investment strategies, real-time market predictions, & profitability assessments for oil & gas projects.",
+    icon: "bar-chart-3",
     features: [
       "Oil Futures & Commodity Trading Signals",
       "Asset & Project Valuation",
-      "Economic Forecasting & Budgeting Tools",
-      "Investment Risk Assessment"
-    ]
+      "Investment Risk Assessment",
+      "Cost Optimization & Profitability Analysis",
+    ],
+    link: "https://chatgpt.com/g/g-67db7707cfbc8191ac34069dd0664e51-petrofinancial-gpt",
+    color: "emerald-600",
   },
   {
-    id: 7,
+    id: "rig-master",
     name: "RigMaster GPT",
-    shortDescription: "Efficient oil rig operations & maintenance",
-    icon: Drill,
-    iconBg: "bg-orange-50",
-    primaryColor: "text-orange-600",
-    description: "Assists users in ensuring efficient oil rig operations by providing predictive maintenance, corrosion control strategies, equipment tracking, & automated inspections.",
+    description: "Efficient oil rig operations solution providing predictive maintenance, corrosion control strategies, equipment tracking, & automated inspections.",
+    icon: "settings",
     features: [
       "Predictive Equipment Failure Alerts",
-      "Maintenance Scheduling & Resource Optimization",
-      "Rig Performance Analytics",
-      "Safety Protocol Compliance"
-    ]
+      "Corrosion Prevention & Control",
+      "Automated Equipment Tracking",
+      "Real-Time Performance Optimization",
+    ],
+    link: "https://chatgpt.com/g/g-67db7297b9ac8191a41e30599e0b5352-rigmaster-gpt",
+    color: "orange-600",
   },
   {
-    id: 8,
-    name: "DrillAnalytics Pro",
-    shortDescription: "Data-driven drilling optimization & analysis",
-    icon: FileCode,
-    iconBg: "bg-cyan-50",
-    primaryColor: "text-cyan-600",
-    description: "Sophisticated analytics platform for drilling operations, providing real-time data analysis and optimization recommendations.",
+    id: "safety-guard",
+    name: "SafetyGuard GPT",
+    description: "Comprehensive oil rig and refinery safety management providing risk assessments, predictive safety alerts, and emergency response training simulations.",
+    icon: "shield-alert",
     features: [
-      "Real-time Drilling Data Analysis",
-      "Performance Benchmarking",
-      "Drilling Parameter Optimization",
-      "Cost Efficiency Tracking"
-    ]
+      "Risk Assessment & Hazard Identification",
+      "Predictive Accident Modeling",
+      "Virtual Incident Simulation Training",
+      "Emergency Response Optimization",
+    ],
+    link: "https://chatgpt.com/g/g-67db6f806914819193737a13a26a7782-safetyguard-gpt",
+    color: "red-600",
   },
   {
-    id: 9,
-    name: "ReservoirInsight AI",
-    shortDescription: "Reservoir modeling & production forecasting",
-    icon: Search,
-    iconBg: "bg-emerald-50",
-    primaryColor: "text-emerald-600",
-    description: "Advanced AI for reservoir modeling, simulation, and production forecasting to maximize recovery and efficiency.",
+    id: "drill-genius",
+    name: "DrillGenius GPT",
+    description: "Comprehensive support for drilling operations utilizing predictive analytics, real-time drilling recommendations, mud engineering management, and rig performance monitoring.",
+    icon: "drill",
     features: [
-      "3D Reservoir Visualization",
-      "Production Decline Analysis",
-      "Enhanced Oil Recovery Planning",
-      "Geological Feature Recognition"
-    ]
+      "AI-Driven Drilling Optimization",
+      "Real-Time Performance Monitoring",
+      "Intelligent Mud Engineering",
+      "Automated Rig Performance Benchmarking",
+    ],
+    link: "https://chatgpt.com/g/g-67db6c15e7088191b80dc642b5d99765-drillgenius-gpt",
+    color: "cyan-600",
   },
   {
-    id: 10,
-    name: "SafetyGuardian AI",
-    shortDescription: "Risk mitigation & safety management",
-    icon: AlertTriangle,
-    iconBg: "bg-rose-50",
-    primaryColor: "text-rose-600",
-    description: "Comprehensive safety management system for identifying risks, preventing incidents, and ensuring regulatory compliance.",
+    id: "petro-explorer",
+    name: "PetroExplorer GPT",
+    description: "AI-powered seismic and geological exploration expert designed to identify prime drilling locations, assess geological risks, and predict resource availability and quality.",
+    icon: "globe",
     features: [
-      "Real-time Safety Risk Detection",
-      "Incident Prevention Analytics",
-      "Safety Training Management",
-      "Hazard Identification & Mitigation"
-    ]
-  }
+      "Geological Risk Assessments",
+      "Exploration Mapping & Visualization",
+      "Predictive Modeling of Resources",
+      "Advanced Geospatial Analysis",
+    ],
+    link: "https://chatgpt.com/g/g-67db6a351af08191b5e8adf1d281bbc0-petroexplorer-gpt",
+    color: "indigo-600",
+  },
 ];

@@ -5,86 +5,48 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 210 40% 2%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 222 47% 5%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 222 47% 5%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 210 100% 35%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 222 84% 5%;
-
-    --radius: 1rem;
-  }
-
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 100% 50%;
-    --primary-foreground: 222 47% 11%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
     --ring: 213 27% 84%;
-  }
-}
 
-@layer base {
-  * {
-    @apply border-border;
+    --radius: 1rem;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    background-image: radial-gradient(
-      circle at top center,
-      rgba(12, 150, 230, 0.05) 0%,
-      rgba(12, 150, 230, 0) 70%
-    );
-    background-size: 100% 100%;
+    @apply bg-energy-950 text-foreground font-sans;
+    background-image: 
+      radial-gradient(circle at top center, rgba(12, 150, 230, 0.15) 0%, rgba(12, 150, 230, 0) 70%),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230077c5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans tracking-tight;
+    @apply font-cyber tracking-tight;
   }
 
   .glass-card {
@@ -92,11 +54,15 @@
   }
 
   .glass-card-dark {
-    @apply rounded-2xl border border-black/10 bg-black/5 backdrop-blur-lg;
+    @apply rounded-2xl border border-cyber-light/20 bg-black/50 backdrop-blur-xl;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-drill-600 to-drill-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-drill-400 to-neon-blue bg-clip-text text-transparent;
+  }
+
+  .cyber-border {
+    @apply border border-neon-blue/50 shadow-[0_0_10px_rgba(0,255,255,0.3)];
   }
 
   .animate-delay-1 {
@@ -130,11 +96,23 @@
   }
 
   .btn-primary {
-    @apply bg-drill-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-drill-700 hover:shadow-md active:bg-drill-800;
+    @apply bg-drill-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-drill-700 hover:shadow-md active:bg-drill-800 shadow-[0_0_10px_rgba(0,119,197,0.5)];
   }
 
   .btn-secondary {
-    @apply bg-white text-drill-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-50 hover:shadow-md active:bg-gray-100 border border-drill-100;
+    @apply bg-energy-800 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-energy-700 hover:shadow-md active:bg-energy-600 border border-energy-700;
+  }
+
+  .cyber-btn {
+    @apply bg-cyber-black border border-cyber-light text-cyber-light px-6 py-3 font-cyber uppercase tracking-wider rounded shadow-[0_0_10px_rgba(102,252,241,0.5)] transition-all duration-300 hover:shadow-[0_0_20px_rgba(102,252,241,0.7)] hover:border-neon-blue;
+  }
+
+  .cyber-card {
+    @apply bg-cyber-darker/80 backdrop-blur-md border border-cyber-light/30 rounded-md p-6 shadow-[0_0_15px_rgba(102,252,241,0.15)];
+  }
+
+  .neon-text {
+    @apply text-neon-blue animate-neon-pulse;
   }
 }
 

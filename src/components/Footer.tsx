@@ -1,12 +1,26 @@
 
 import React from "react";
 import AnimatedLogo from "./AnimatedLogo";
+import { ExternalLink } from "lucide-react";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  
+  const toolLinks = [
+    { name: "PetroMaster AI", url: "https://chatgpt.com/g/g-67db8234c568819194e19bbc67c5801b-petromaster-ai" },
+    { name: "PetroTech Innovator GPT", url: "https://chatgpt.com/g/g-67db7f6195848191ae0c02dddfb3b1d9-petrotech-innovator-gpt" },
+    { name: "OilLogistics GPT", url: "https://chatgpt.com/g/g-67db7da1ea288191856f5c5a58362a62-oillogistics-gpt" },
+    { name: "GreenDrill GPT", url: "https://chatgpt.com/g/g-67db7bcdb97481919a202f3ab2200e45-greendrill-gpt" },
+    { name: "PetroCompliance GPT", url: "https://chatgpt.com/g/g-67db796e1664819193bb1fdda36c81e3-petrocompliance-gpt" },
+    { name: "PetroFinancial GPT", url: "https://chatgpt.com/g/g-67db7707cfbc8191ac34069dd0664e51-petrofinancial-gpt" },
+    { name: "RigMaster GPT", url: "https://chatgpt.com/g/g-67db7297b9ac8191a41e30599e0b5352-rigmaster-gpt" },
+    { name: "SafetyGuard GPT", url: "https://chatgpt.com/g/g-67db6f806914819193737a13a26a7782-safetyguard-gpt" },
+    { name: "DrillGenius GPT", url: "https://chatgpt.com/g/g-67db6c15e7088191b80dc642b5d99765-drillgenius-gpt" },
+    { name: "PetroExplorer GPT", url: "https://chatgpt.com/g/g-67db6a351af08191b5e8adf1d281bbc0-petroexplorer-gpt" },
+  ];
 
   return (
-    <footer className="bg-energy-950 text-white py-16">
+    <footer id="contact" className="bg-energy-950 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
@@ -39,53 +53,95 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Tools</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">AI Tools</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">PetroMaster AI</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">PetroTech Innovator</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">OilLogistics GPT</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">GreenDrill GPT</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">PetroCompliance GPT</a></li>
+              {toolLinks.slice(0, 5).map((tool, index) => (
+                <li key={index}>
+                  <a 
+                    href={tool.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-energy-300 hover:text-drill-400 transition-colors flex items-center"
+                  >
+                    {tool.name}
+                    <ExternalLink className="ml-1 h-3 w-3" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Resources</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">More Tools</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">API Reference</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">Case Studies</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="text-energy-300 hover:text-drill-400 transition-colors">FAQ</a></li>
+              {toolLinks.slice(5).map((tool, index) => (
+                <li key={index}>
+                  <a 
+                    href={tool.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-energy-300 hover:text-drill-400 transition-colors flex items-center"
+                  >
+                    {tool.name}
+                    <ExternalLink className="ml-1 h-3 w-3" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div id="contact">
+          <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Contact Us</h4>
             <p className="text-energy-300 mb-4">
               Ready to transform your oil & gas operations with AI? Get in touch with our team.
             </p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full px-4 py-2 rounded-lg bg-energy-800 border border-energy-700 text-white placeholder-energy-400 focus:outline-none focus:ring-2 focus:ring-drill-500"
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-2 rounded-lg bg-drill-600 text-white font-medium hover:bg-drill-500 transition-colors"
-              >
-                Request Demo
-              </button>
-            </form>
+            <div className="space-y-3">
+              <a href="tel:4758008096" className="text-energy-300 hover:text-drill-400 transition-colors block">
+                <strong>Phone:</strong> (475) 800-8096
+              </a>
+              <a href="mailto:Contact@ai-webtools.com" className="text-energy-300 hover:text-drill-400 transition-colors block">
+                <strong>Email:</strong> Contact@ai-webtools.com
+              </a>
+              <div className="pt-4">
+                <a 
+                  href="https://aiwebtools.ai" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-drill-600 hover:bg-drill-500 text-white font-medium transition-colors"
+                >
+                  More AI Tools
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="border-t border-energy-800 pt-8">
-          <p className="text-energy-400 text-center">
-            &copy; {currentYear} DRILL BABY DRILL AI SUITE. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-energy-400 text-center md:text-left mb-4 md:mb-0">
+              &copy; {currentYear} <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-drill-400 transition-colors">AI WEB TOOLS LLC</a>. All rights reserved.
+            </p>
+            <div className="flex items-center space-x-6">
+              <a href="#faq" className="text-energy-400 hover:text-drill-400 transition-colors">FAQ</a>
+              <a href="#disclaimer" className="text-energy-400 hover:text-drill-400 transition-colors">Disclaimer</a>
+              <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Privacy Policy</a>
+              <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Terms of Service</a>
+            </div>
+          </div>
         </div>
+      </div>
+      
+      <div className="fixed bottom-8 right-8">
+        <a 
+          href="https://www.aiwebtools.ai" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center justify-center px-5 py-3 rounded-full bg-drill-600 hover:bg-drill-500 text-white font-medium transition-all hover:shadow-lg"
+        >
+          More AI Tools
+          <ExternalLink className="ml-2 h-4 w-4" />
+        </a>
       </div>
     </footer>
   );

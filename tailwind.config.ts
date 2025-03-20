@@ -88,6 +88,20 @@ export default {
 					800: '#334155',
 					900: '#1e2736',
 					950: '#111827'
+				},
+				neon: {
+					blue: '#00ffff',
+					pink: '#ff00ff',
+					purple: '#9d00ff',
+					green: '#00ff9d',
+					yellow: '#ffff00'
+				},
+				cyber: {
+					black: '#0b0c10',
+					darker: '#1f2833',
+					dark: '#2b3541',
+					medium: '#45a29e',
+					light: '#66fcf1'
 				}
 			},
 			borderRadius: {
@@ -135,6 +149,22 @@ export default {
 				'slide-down': {
 					'0%': { transform: 'translateY(-100%)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'neon-pulse': {
+					'0%, 100%': { 
+						textShadow: '0 0 4px #fff, 0 0 11px #fff, 0 0 19px #0077c5, 0 0 40px #0077c5',
+					},
+					'50%': {
+						textShadow: '0 0 4px #fff, 0 0 10px #fff, 0 0 18px #0077c5, 0 0 30px #0077c5',
+					}
+				},
+				'cyber-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff',
+					},
+					'50%': {
+						boxShadow: '0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff',
+					}
 				}
 			},
 			animation: {
@@ -147,15 +177,19 @@ export default {
 				rotate: 'rotate 20s linear infinite',
 				scale: 'scale 10s ease-in-out infinite',
 				'slide-up': 'slide-up 0.5s ease-out',
-				'slide-down': 'slide-down 0.5s ease-out'
+				'slide-down': 'slide-down 0.5s ease-out',
+				'neon-pulse': 'neon-pulse 2s infinite',
+				'cyber-glow': 'cyber-glow 2s infinite'
 			},
 			fontFamily: {
 				sans: ['SF Pro Display', 'Inter', 'sans-serif'],
-				mono: ['SF Mono', 'monospace']
+				mono: ['SF Mono', 'monospace'],
+				cyber: ['Orbitron', 'sans-serif']
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
-				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--gradient-color-stops))'
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--gradient-color-stops))',
+				'cyber-grid': 'linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)'
 			}
 		}
 	},

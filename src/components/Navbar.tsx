@@ -1,9 +1,10 @@
 
 import React, { useState, useEffect } from "react";
 import AnimatedLogo from "./AnimatedLogo";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlassCard } from "./ui-custom/GlassCard";
+import { tools } from "@/lib/tools";
 
 interface NavbarProps {
   className?: string;
@@ -31,8 +32,15 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     { name: "Home", href: "#" },
     { name: "Tools", href: "#tools" },
     { name: "About", href: "#about" },
+    { name: "FAQ", href: "#faq" },
+    { name: "Disclaimer", href: "#disclaimer" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const toolLinks = tools.map(tool => ({
+    name: tool.name,
+    href: tool.link
+  }));
 
   return (
     <header
@@ -44,35 +52,72 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     >
       <div className="container mx-auto px-4">
         <GlassCard
+          variant="dark"
+          intensity={scrolled ? "medium" : "low"}
           className={cn(
             "flex items-center justify-between py-2 px-4 transition-all duration-300",
             scrolled ? "shadow-md" : ""
           )}
-          intensity={scrolled ? "medium" : "low"}
         >
           <div className="flex items-center">
             <AnimatedLogo size="sm" />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-energy-800 hover:text-drill-600 transition-colors font-medium"
+                className="text-white hover:text-drill-400 transition-colors font-medium"
               >
                 {link.name}
               </a>
             ))}
-            <a href="#contact" className="btn-primary py-2 px-4">
+            <div className="relative group">
+              <button className="text-white hover:text-drill-400 transition-colors font-medium flex items-center">
+                AI Tools
+              </button>
+              <div className="absolute left-0 mt-2 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <GlassCard variant="dark" intensity="high" className="py-2 px-1">
+                  <div className="flex flex-col space-y-2">
+                    {toolLinks.map((tool, index) => (
+                      <a
+                        key={index}
+                        href={tool.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-energy-200 hover:text-drill-400 transition-colors text-sm px-3 py-1.5 flex items-center"
+                      >
+                        {tool.name}
+                        <ExternalLink className="ml-1.5 h-3 w-3" />
+                      </a>
+                    ))}
+                    <div className="border-t border-energy-700 my-1"></div>
+                    <a
+                      href="https://www.aiwebtools.ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-energy-200 hover:text-drill-400 transition-colors text-sm font-medium px-3 py-1.5 flex items-center"
+                    >
+                      More AI Tools
+                      <ExternalLink className="ml-1.5 h-3 w-3" />
+                    </a>
+                  </div>
+                </GlassCard>
+              </div>
+            </div>
+            <a 
+              href="#contact" 
+              className="bg-drill-600 hover:bg-drill-500 text-white px-4 py-2 rounded-full font-medium transition-colors"
+            >
               Get Started
             </a>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-energy-800 focus:outline-none"
+            className="md:hidden text-white focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,21 +126,53 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <GlassCard className="md:hidden mt-2 py-4 px-4 animate-slide-down">
-            <nav className="flex flex-col space-y-4">
+          <GlassCard 
+            variant="dark" 
+            intensity="high" 
+            className="md:hidden mt-2 py-4 px-4 animate-slide-down"
+          >
+            <nav className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-energy-800 hover:text-drill-600 transition-colors font-medium py-2"
+                  className="text-white hover:text-drill-400 transition-colors font-medium py-2 border-b border-energy-800"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
+              <div className="py-2">
+                <div className="font-medium text-white mb-2">AI Tools:</div>
+                <div className="grid grid-cols-1 gap-y-2">
+                  {toolLinks.map((tool, index) => (
+                    <a
+                      key={index}
+                      href={tool.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-energy-300 hover:text-drill-400 transition-colors text-sm flex items-center pl-2"
+                    >
+                      {tool.name}
+                      <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                  ))}
+                </div>
+                <div className="mt-3 pt-2 border-t border-energy-800">
+                  <a
+                    href="https://www.aiwebtools.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-energy-200 hover:text-drill-400 transition-colors font-medium flex items-center"
+                  >
+                    More AI Tools
+                    <ExternalLink className="ml-1.5 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
               <a
                 href="#contact"
-                className="btn-primary text-center"
+                className="bg-drill-600 text-white text-center py-3 rounded-full font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get Started
