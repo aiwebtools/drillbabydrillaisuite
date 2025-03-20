@@ -35,6 +35,11 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
   const navLinks = [
     { name: "Home", href: "#" },
+    { 
+      name: "More AI Tools", 
+      href: "https://www.aiwebtools.ai",
+      external: true 
+    },
     { name: "How It Works", href: "#how-it-works" },
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
@@ -78,9 +83,12 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-cyan-400 transition-colors font-medium"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className="text-white hover:text-cyan-400 transition-colors font-medium flex items-center"
               >
                 {link.name}
+                {link.external && <ExternalLink className="ml-1.5 h-3.5 w-3.5" />}
               </a>
             ))}
             
@@ -108,17 +116,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                 </GlassCard>
               </div>
             </div>
-            
-            {/* More AI Tools link */}
-            <a 
-              href="https://www.aiwebtools.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-cyan-400 transition-colors font-medium flex items-center"
-            >
-              More AI Tools
-              <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
-            </a>
             
             {/* Compare Tools button */}
             <a 
@@ -154,10 +151,13 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                     <a
                       key={link.name}
                       href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
                       className="text-white hover:text-cyan-400 transition-colors font-medium py-3 border-b border-energy-800 flex items-center"
                       onClick={handleNavLinkClick}
                     >
                       {link.name}
+                      {link.external && <ExternalLink className="ml-1 h-3.5 w-3.5" />}
                     </a>
                   ))}
                   <div className="py-4">
@@ -176,18 +176,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                           <ExternalLink className="ml-1 h-3 w-3" />
                         </a>
                       ))}
-                    </div>
-                    <div className="mt-4 pt-3 border-t border-energy-800">
-                      <a
-                        href="https://www.aiwebtools.ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-energy-200 hover:text-cyan-400 transition-colors font-medium flex items-center"
-                        onClick={handleNavLinkClick}
-                      >
-                        More AI Tools
-                        <ExternalLink className="ml-1.5 h-4 w-4" />
-                      </a>
                     </div>
                   </div>
                   <div className="mt-4 pb-6">
