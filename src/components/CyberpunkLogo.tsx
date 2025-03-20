@@ -9,28 +9,28 @@ interface CyberpunkLogoProps {
 
 const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className }) => {
   const sizeClasses = {
-    sm: "text-md sm:text-xl", // Reduced size on mobile
-    md: "text-lg sm:text-2xl",
-    lg: "text-xl sm:text-3xl",
+    sm: "text-sm sm:text-xl", // Reduced text size on mobile
+    md: "text-base sm:text-2xl", // Reduced text size on mobile
+    lg: "text-lg sm:text-3xl", // Reduced text size on mobile
   };
 
   const subtitleSizes = {
-    sm: "text-[6px] sm:text-xs", // Further reduced for better mobile display
-    md: "text-[8px] sm:text-sm",
-    lg: "text-xs sm:text-base",
+    sm: "text-[5px] sm:text-xs", // Further reduced for better mobile display
+    md: "text-[6px] sm:text-sm", // Further reduced for better mobile display
+    lg: "text-[8px] sm:text-base", // Further reduced for better mobile display
   };
 
   const iconSizes = {
-    sm: 16,  // Further reduced from 18
-    md: 20,  // Further reduced from 24
-    lg: 26,  // Reduced from 30
+    sm: 14,  // Reduced size for mobile
+    md: 18,  // Reduced size for mobile
+    lg: 22,  // Reduced size for mobile
   };
 
   // Adjusted container width classes for better mobile display
   const containerWidths = {
-    sm: "max-w-[180px] sm:max-w-none", // Reduced from 200px
-    md: "max-w-[220px] sm:max-w-none", // Reduced from 240px
-    lg: "max-w-[260px] sm:max-w-none", // Reduced from 280px
+    sm: "max-w-[160px] sm:max-w-none", // Reduced from 180px
+    md: "max-w-[200px] sm:max-w-none", // Reduced from 220px
+    lg: "max-w-[240px] sm:max-w-none", // Reduced from 260px
   };
 
   return (
@@ -67,7 +67,7 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
         href="https://www.aiwebtools.ai" 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="mt-1 text-[8px] sm:text-[10px] text-energy-500 hover:text-cyan-400 transition-colors"
+        className="mt-1 text-[6px] sm:text-[10px] text-energy-500 hover:text-cyan-400 transition-colors"
       >
         Presented by AiWebTools.Ai
       </a>

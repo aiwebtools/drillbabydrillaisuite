@@ -14,31 +14,31 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   const logoRef = useRef<HTMLDivElement>(null);
   
   const sizeClasses = {
-    sm: "text-sm sm:text-xl", // Reduced from text-base
-    md: "text-base sm:text-2xl", // Reduced from text-lg
-    lg: "text-lg sm:text-3xl", // Reduced from text-xl
-    xl: "text-xl sm:text-5xl"  // Reduced from text-2xl
+    sm: "text-xs sm:text-xl", // Further reduced for mobile
+    md: "text-sm sm:text-2xl", // Further reduced for mobile
+    lg: "text-base sm:text-3xl", // Further reduced for mobile
+    xl: "text-lg sm:text-5xl"  // Further reduced for mobile
   };
 
   const subtitleSizes = {
-    sm: "text-[5px] sm:text-xs", // Further reduced for better mobile display
-    md: "text-[6px] sm:text-sm", // Reduced from 8px
-    lg: "text-[8px] sm:text-base", // Reduced from 10px
-    xl: "text-[9px] sm:text-sm md:text-lg" // Reduced for mobile
+    sm: "text-[4px] sm:text-xs", // Further reduced for better mobile display
+    md: "text-[5px] sm:text-sm", // Further reduced for better mobile display
+    lg: "text-[6px] sm:text-base", // Further reduced for better mobile display
+    xl: "text-[7px] sm:text-sm md:text-lg" // Further reduced for better mobile display
   };
 
   const iconSizes = {
-    sm: 14, // Reduced from 16
-    md: 18, // Reduced from 20
-    lg: 22, // Reduced from 24
-    xl: 24  // Reduced from 28
+    sm: 12, // Further reduced for mobile
+    md: 16, // Further reduced for mobile
+    lg: 18, // Further reduced for mobile
+    xl: 20  // Further reduced for mobile
   };
 
   const containerWidths = {
-    sm: "max-w-[150px] sm:max-w-none", // Reduced from 160px
-    md: "max-w-[170px] sm:max-w-none", // Reduced from 190px
-    lg: "max-w-[200px] sm:max-w-none", // Reduced from 220px
-    xl: "max-w-[230px] sm:max-w-none", // Reduced from 260px
+    sm: "max-w-[130px] sm:max-w-none", // Further reduced for mobile
+    md: "max-w-[150px] sm:max-w-none", // Further reduced for mobile
+    lg: "max-w-[180px] sm:max-w-none", // Further reduced for mobile
+    xl: "max-w-[210px] sm:max-w-none", // Further reduced for mobile
   };
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -40,7 +39,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
     { name: "Disclaimer", href: "#disclaimer" },
-    // Changed "Contact" to just linking to the tools section
     { name: "Compare Tools", href: "#tools" },
   ];
 
@@ -66,15 +64,16 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           variant="dark"
           intensity={scrolled ? "medium" : "low"}
           className={cn(
-            "flex items-center justify-between py-2 px-4 transition-all duration-300 border-cyber-light/20",
+            "flex items-center justify-between py-2 px-2 sm:px-4 transition-all duration-300 border-cyber-light/20",
             scrolled ? "shadow-[0_0_15px_rgba(0,255,255,0.15)]" : ""
           )}
         >
-          <div className="flex items-center">
-            <CyberpunkLogo size="sm" />
+          <div className="flex items-center overflow-hidden">
+            <div className="ml-1 sm:ml-0 flex-shrink-0">
+              <CyberpunkLogo size="sm" />
+            </div>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
@@ -126,7 +125,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </a>
           </nav>
 
-          {/* Mobile Menu Button with Sheet Component */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <button
@@ -146,7 +144,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                 </button>
               </div>
               
-              {/* Scrollable Navigation Area */}
               <ScrollArea className="h-[calc(100vh-80px)]">
                 <nav className="flex flex-col p-4">
                   {navLinks.map((link) => (
