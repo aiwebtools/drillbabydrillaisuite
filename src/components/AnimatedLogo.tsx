@@ -14,24 +14,24 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   const logoRef = useRef<HTMLDivElement>(null);
   
   const sizeClasses = {
-    sm: "text-2xl",
-    md: "text-3xl",
-    lg: "text-4xl",
-    xl: "text-5xl"
+    sm: "text-xl",
+    md: "text-2xl",
+    lg: "text-3xl",
+    xl: "text-4xl sm:text-5xl" // Responsive sizing for xl
   };
 
   const subtitleSizes = {
     sm: "text-xs",
     md: "text-sm",
     lg: "text-base",
-    xl: "text-lg"
+    xl: "text-xs sm:text-sm md:text-lg" // Smaller on mobile for xl size
   };
 
   const iconSizes = {
     sm: 24,
     md: 32,
     lg: 40,
-    xl: 48
+    xl: 36
   };
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
       ref={logoRef}
       className={`flex flex-col transition-transform duration-200 ease-out ${sizeClasses[size]} ${className}`}
     >
-      <div className="flex items-center flex-nowrap whitespace-nowrap">
+      <div className="flex items-center flex-nowrap whitespace-nowrap overflow-visible">
         <div className="mr-2 text-drill-600 flex-shrink-0">
           <Drill size={iconSizes[size]} className="animate-float" />
         </div>

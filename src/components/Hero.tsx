@@ -1,3 +1,4 @@
+
 import React from "react";
 import AnimatedLogo from "./AnimatedLogo";
 import { GlassCard } from "./ui-custom/GlassCard";
@@ -10,12 +11,12 @@ const Hero: React.FC = () => {
         <div className="section-animate flex flex-col items-center text-center mb-10">
           <AnimatedLogo size="xl" className="mb-8" />
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto text-balance">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto text-balance">
             <span className="text-gradient">Revolutionary AI Suite</span> for the 
             <span className="text-energy-800"> Oil & Gas Industry</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-energy-600 max-w-3xl mx-auto mb-8 text-balance">
+          <p className="text-base sm:text-lg md:text-xl text-energy-600 max-w-3xl mx-auto mb-8 text-balance">
             A comprehensive collection of 10 specialized AI tools designed to revolutionize operations, 
             optimize workflows, and drive sustainable growth in the energy sector.
           </p>
