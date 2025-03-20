@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import { Tool } from "@/lib/tools";
 import { GlassCard } from "./ui-custom/GlassCard";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 interface ToolCardProps {
   tool: Tool;
@@ -17,17 +18,16 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, onClick, index }) => {
   return (
     <GlassCard
       className={cn(
-        "p-6 card-hover cursor-pointer group animate-fadeIn overflow-hidden relative",
+        "p-6 card-hover cursor-pointer group animate-fadeIn overflow-hidden relative border border-energy-800/50 bg-energy-900/70",
         `animate-delay-${index % 5 + 1}`
       )}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      onClick={() => onClick(tool.id)}
     >
       {/* Shimmer effect on hover */}
       <div
         className={cn(
-          "absolute inset-0 animate-shimmer opacity-0 transition-opacity duration-300",
+          "absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent bg-[size:200%_100%] animate-shimmer opacity-0 transition-opacity duration-300",
           isHovering ? "opacity-100" : "opacity-0"
         )}
       />
@@ -37,16 +37,34 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, onClick, index }) => {
           <tool.icon className={cn("w-6 h-6", tool.primaryColor)} />
         </div>
         
-        <h3 className="text-xl font-semibold mb-2 text-energy-900 group-hover:text-drill-600 transition-colors">
+        <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-cyan-400 transition-colors">
           {tool.name}
         </h3>
         
-        <p className="text-energy-600 mb-4">
+        <p className="text-energy-400 mb-4 min-h-[50px]">
           {tool.shortDescription}
         </p>
         
-        <div className="flex items-center text-sm font-medium text-drill-600 mt-2 group-hover:translate-x-1 transition-transform">
-          Learn more <ChevronRight className="ml-1 h-4 w-4" />
+        <div className="flex justify-between items-center mt-6">
+          <button 
+            className="flex items-center text-sm font-medium text-cyan-400 group-hover:translate-x-1 transition-transform"
+            onClick={(e) => {
+              e.stopPropagation();
+              onClick(tool.id);
+            }}
+          >
+            Learn more <ChevronRight className="ml-1 h-4 w-4" />
+          </button>
+          
+          <a 
+            href={tool.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="p-2 rounded-full bg-energy-800 hover:bg-energy-700 text-cyan-400 transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </GlassCard>

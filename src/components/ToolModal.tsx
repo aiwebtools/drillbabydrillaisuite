@@ -2,8 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import { Tool } from "@/lib/tools";
 import { GlassCard } from "./ui-custom/GlassCard";
-import { X, Check } from "lucide-react";
+import { X, Check, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 interface ToolModalProps {
   tool: Tool;
@@ -43,15 +44,15 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
       <div
         ref={modalRef}
         className="w-full max-w-3xl max-h-[90vh] overflow-auto animate-scale-in"
       >
-        <GlassCard intensity="high" className="p-6 md:p-8 relative">
+        <GlassCard intensity="high" className="p-6 md:p-8 relative border border-energy-800/50 bg-energy-900/80">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-energy-500 hover:text-energy-800 transition-colors"
+            className="absolute top-4 right-4 text-energy-400 hover:text-white transition-colors"
           >
             <X className="h-6 w-6" />
           </button>
@@ -62,21 +63,21 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, isOpen, onClose }) => {
             </div>
 
             <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2 text-energy-900">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">
                 {tool.name}
               </h3>
-              <p className="text-energy-600 mb-6 text-lg">
+              <p className="text-energy-400 mb-6 text-lg">
                 {tool.description}
               </p>
 
-              <h4 className="text-xl font-semibold mb-4 text-energy-800">
+              <h4 className="text-xl font-semibold mb-4 text-cyan-400">
                 Key Features
               </h4>
               <ul className="space-y-3 mb-6">
                 {tool.features.map((feature, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-2 text-energy-700 animate-fadeIn"
+                    className="flex items-start gap-2 text-energy-300 animate-fadeIn"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -86,12 +87,17 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, isOpen, onClose }) => {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <button className="btn-primary">
-                  Get Started
-                </button>
+                <a 
+                  href={tool.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-purple-500 transition-all duration-300"
+                >
+                  Get Started <ExternalLink className="w-4 h-4" />
+                </a>
                 <button
                   onClick={onClose}
-                  className="btn-secondary"
+                  className="px-6 py-3 rounded-lg bg-energy-800 text-energy-300 hover:bg-energy-700 hover:text-white transition-colors"
                 >
                   Close
                 </button>

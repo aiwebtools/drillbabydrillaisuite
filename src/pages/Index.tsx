@@ -37,10 +37,21 @@ const Index: React.FC = () => {
     };
   }, []);
 
+  // Apply dark theme to the body
+  useEffect(() => {
+    document.body.classList.add('bg-energy-950', 'text-white');
+    return () => {
+      document.body.classList.remove('bg-energy-950', 'text-white');
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen overflow-hidden bg-energy-950 text-white">
       <Navbar />
       <Hero />
+
+      {/* Tool selection grid - moved up to be more prominent */}
+      <ToolsGrid />
 
       <section className="py-16 px-4 bg-energy-950 relative overflow-hidden">
         <div className="container mx-auto max-w-5xl" data-animate="true">
@@ -65,8 +76,6 @@ const Index: React.FC = () => {
         <div className="absolute top-0 right-0 w-64 h-64 bg-drill-600/5 rounded-full -mr-32 -mt-32" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-drill-600/5 rounded-full -ml-40 -mb-40" />
       </section>
-
-      <ToolsGrid />
 
       <section id="about" className="py-20 bg-energy-950">
         <div className="container mx-auto px-4">

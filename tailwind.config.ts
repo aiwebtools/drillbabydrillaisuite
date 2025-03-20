@@ -165,6 +165,10 @@ export default {
 					'50%': {
 						boxShadow: '0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff',
 					}
+				},
+				'scale-in': {
+					'0%': { transform: 'scale(0.9)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -179,7 +183,8 @@ export default {
 				'slide-up': 'slide-up 0.5s ease-out',
 				'slide-down': 'slide-down 0.5s ease-out',
 				'neon-pulse': 'neon-pulse 2s infinite',
-				'cyber-glow': 'cyber-glow 2s infinite'
+				'cyber-glow': 'cyber-glow 2s infinite',
+				'scale-in': 'scale-in 0.3s ease-out'
 			},
 			fontFamily: {
 				sans: ['SF Pro Display', 'Inter', 'sans-serif'],
