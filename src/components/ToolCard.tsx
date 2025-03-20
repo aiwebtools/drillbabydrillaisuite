@@ -45,6 +45,12 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool, onClick, index }) => {
           {tool.shortDescription}
         </p>
         
+        {/* Key feature highlight - adding this section to show differences */}
+        <div className="mb-4 py-2 px-3 rounded-md bg-energy-800/80 border border-energy-700/50">
+          <p className="text-sm font-medium text-cyan-400 mb-1">Key Specialization:</p>
+          <p className="text-sm text-energy-300">{tool.features[0]}</p>
+        </div>
+        
         <div className="flex flex-col gap-3">
           <Button 
             variant="outline" 

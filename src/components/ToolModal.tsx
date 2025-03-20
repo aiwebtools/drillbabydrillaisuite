@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { Tool } from "@/lib/tools";
 import { GlassCard } from "./ui-custom/GlassCard";
-import { X, Check, ExternalLink } from "lucide-react";
+import { X, Check, ExternalLink, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
@@ -58,7 +58,7 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, isOpen, onClose }) => {
           </button>
 
           <div className="flex flex-col md:flex-row items-start gap-6">
-            <div className={cn("rounded-full w-16 h-16 flex items-center justify-center", tool.iconBg)}>
+            <div className={cn("rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center", tool.iconBg)}>
               <tool.icon className={cn("w-8 h-8", tool.primaryColor)} />
             </div>
 
@@ -66,12 +66,30 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, isOpen, onClose }) => {
               <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">
                 {tool.name}
               </h3>
+              
+              {/* New: Highlight primary purpose badge */}
+              <div className="inline-block mb-4">
+                <div className="text-sm font-medium py-1 px-3 rounded-full bg-energy-800 border border-energy-700 text-cyan-400">
+                  {tool.features[0]}
+                </div>
+              </div>
+              
               <p className="text-energy-400 mb-6 text-lg">
                 {tool.description}
               </p>
 
+              {/* New: What makes this tool unique section */}
+              <div className="mb-6 p-4 rounded-lg bg-energy-800/50 border border-energy-700/50">
+                <h4 className="text-lg font-semibold mb-3 text-white">
+                  What Makes {tool.name.replace(" GPT", "").replace(" AI", "")} Unique:
+                </h4>
+                <p className="text-energy-300">
+                  {tool.name} specializes in {tool.features[0].toLowerCase()}, setting it apart from other tools in our suite by focusing on {tool.features[1].toLowerCase()}.
+                </p>
+              </div>
+
               <h4 className="text-xl font-semibold mb-4 text-cyan-400">
-                Key Features
+                Key Capabilities
               </h4>
               <ul className="space-y-3 mb-6">
                 {tool.features.map((feature, index) => (
@@ -93,7 +111,7 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, isOpen, onClose }) => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-purple-500 transition-all duration-300"
                 >
-                  Get Started <ExternalLink className="w-4 h-4" />
+                  Get Started with {tool.name.replace(" GPT", "").replace(" AI", "")} <ArrowRight className="w-4 h-4" />
                 </a>
                 <button
                   onClick={onClose}
