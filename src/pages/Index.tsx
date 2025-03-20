@@ -197,8 +197,8 @@ const Index: React.FC = () => {
           </div>
 
           <div className="mt-16 text-center" data-animate="true">
-            <a href="#contact" className="btn-primary inline-flex">
-              Book a Consultation
+            <a href="#tools" className="btn-primary inline-flex">
+              Compare Tools
             </a>
           </div>
         </div>
@@ -216,8 +216,8 @@ const Index: React.FC = () => {
               Join the growing number of energy companies leveraging AI to optimize their workflows,
               reduce costs, and drive sustainable growth.
             </p>
-            <a href="#contact" className="btn-primary inline-flex">
-              Get Started Today
+            <a href="#tools" className="btn-primary inline-flex">
+              Compare Tools
             </a>
           </div>
         </div>
