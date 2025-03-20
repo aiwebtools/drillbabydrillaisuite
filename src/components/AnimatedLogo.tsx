@@ -14,10 +14,17 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   const logoRef = useRef<HTMLDivElement>(null);
   
   const sizeClasses = {
-    sm: "text-3xl",
-    md: "text-4xl",
-    lg: "text-5xl",
-    xl: "text-6xl"
+    sm: "text-2xl",
+    md: "text-3xl",
+    lg: "text-4xl",
+    xl: "text-5xl"
+  };
+
+  const subtitleSizes = {
+    sm: "text-xs",
+    md: "text-sm",
+    lg: "text-base",
+    xl: "text-lg"
   };
 
   const iconSizes = {
@@ -60,19 +67,21 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   return (
     <div 
       ref={logoRef}
-      className={`flex items-center font-bold transition-transform duration-200 ease-out ${sizeClasses[size]} ${className}`}
+      className={`flex flex-col transition-transform duration-200 ease-out ${sizeClasses[size]} ${className}`}
     >
-      <div className="mr-2 text-drill-600">
-        <Drill size={iconSizes[size]} className="animate-float" />
-      </div>
-      <div className="flex flex-col items-start">
-        <div className="flex">
-          <span className="text-gradient">DRILL</span>
-          <span className="ml-1 text-energy-800">BABY</span>
+      <div className="flex items-center">
+        <div className="mr-2 text-drill-600">
+          <Drill size={iconSizes[size]} className="animate-float" />
         </div>
-        <div className="flex items-center -mt-1">
-          <span className="text-gradient">DRILL</span>
-          <span className="ml-1 text-energy-700 text-sm font-normal">AI SUITE</span>
+        <div className="flex flex-col items-start">
+          <div className="flex">
+            <span className="text-gradient font-cyber font-bold">DRILL BABY DRILL</span>
+          </div>
+          <div className="flex items-center -mt-1">
+            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal`}>
+              AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
+            </span>
+          </div>
         </div>
       </div>
     </div>

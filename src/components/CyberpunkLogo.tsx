@@ -9,9 +9,15 @@ interface CyberpunkLogoProps {
 
 const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className }) => {
   const sizeClasses = {
-    sm: "text-2xl",
-    md: "text-3xl",
-    lg: "text-4xl",
+    sm: "text-xl",
+    md: "text-2xl",
+    lg: "text-3xl",
+  };
+
+  const subtitleSizes = {
+    sm: "text-xs",
+    md: "text-sm",
+    lg: "text-base",
   };
 
   const iconSizes = {
@@ -42,8 +48,8 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
               DRILL BABY DRILL
             </h1>
             <div className="flex justify-end">
-              <p className="text-xs text-cyan-300/70 tracking-wider font-mono">
-                AI SUITE
+              <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono`}>
+                AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
               </p>
             </div>
           </div>
