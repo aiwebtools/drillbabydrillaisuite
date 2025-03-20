@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Drill } from "lucide-react";
+import { Factory } from "lucide-react";
 
 interface CyberpunkLogoProps {
   size?: "sm" | "md" | "lg";
@@ -44,7 +44,7 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
           <div className="relative mr-1 sm:mr-3 flex-shrink-0">
             {/* Icon glow */}
             <div className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-50"></div>
-            <Drill 
+            <Factory 
               className="relative text-cyan-400 animate-pulse" 
               size={iconSizes[size]} 
             />

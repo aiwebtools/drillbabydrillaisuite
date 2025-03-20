@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-import { Drill } from "lucide-react";
+import { Factory } from "lucide-react";
 
 interface AnimatedLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
@@ -78,7 +78,7 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
     >
       <div className="flex items-center flex-nowrap whitespace-nowrap overflow-hidden">
         <div className="mr-1 sm:mr-2 text-drill-600 flex-shrink-0">
-          <Drill size={iconSizes[size]} className="animate-float" />
+          <Factory size={iconSizes[size]} className="animate-float" />
         </div>
         <div className="flex flex-col items-start min-w-0 flex-1 overflow-hidden">
           <div className="flex w-full">
