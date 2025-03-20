@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { Factory } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface AnimatedLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
@@ -12,39 +13,40 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   className = "" 
 }) => {
   const logoRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   const sizeClasses = {
-    sm: "text-xs sm:text-xl", // Further reduced for mobile
-    md: "text-sm sm:text-2xl", // Further reduced for mobile
-    lg: "text-base sm:text-3xl", // Further reduced for mobile
-    xl: "text-lg sm:text-5xl"  // Further reduced for mobile
+    sm: "text-xs sm:text-xl",
+    md: "text-sm sm:text-2xl", 
+    lg: "text-base sm:text-3xl",
+    xl: "text-lg sm:text-5xl"
   };
 
   const subtitleSizes = {
-    sm: "text-[4px] sm:text-xs", // Further reduced for better mobile display
-    md: "text-[5px] sm:text-sm", // Further reduced for better mobile display
-    lg: "text-[6px] sm:text-base", // Further reduced for better mobile display
-    xl: "text-[7px] sm:text-sm md:text-lg" // Further reduced for better mobile display
+    sm: "text-[5px] sm:text-xs",
+    md: "text-[6px] sm:text-sm",
+    lg: "text-[7px] sm:text-base",
+    xl: "text-[8px] sm:text-sm md:text-lg"
   };
 
   const iconSizes = {
-    sm: 12, // Further reduced for mobile
-    md: 16, // Further reduced for mobile
-    lg: 18, // Further reduced for mobile
-    xl: 20  // Further reduced for mobile
+    sm: isMobile ? 10 : 12,
+    md: isMobile ? 12 : 16,
+    lg: isMobile ? 14 : 18,
+    xl: isMobile ? 16 : 20
   };
 
   const containerWidths = {
-    sm: "max-w-[130px] sm:max-w-none", // Further reduced for mobile
-    md: "max-w-[150px] sm:max-w-none", // Further reduced for mobile
-    lg: "max-w-[180px] sm:max-w-none", // Further reduced for mobile
-    xl: "max-w-[210px] sm:max-w-none", // Further reduced for mobile
+    sm: "max-w-[120px] sm:max-w-none",
+    md: "max-w-[140px] sm:max-w-none",
+    lg: "max-w-[160px] sm:max-w-none",
+    xl: "max-w-[180px] sm:max-w-none",
   };
 
   useEffect(() => {
     const logo = logoRef.current;
-    if (!logo) return;
-
+    if (!logo || isMobile) return; // Skip effect on mobile for better performance
+    
     const handleMouseMove = (e: MouseEvent) => {
       const rect = logo.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
@@ -69,22 +71,26 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
         logo.removeEventListener('mouseleave', handleMouseLeave);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div 
       ref={logoRef}
-      className={`flex flex-col transition-transform duration-200 ease-out ${containerWidths[size]} ${className}`}
+      className={`flex flex-col ${isMobile ? '' : 'transition-transform duration-200 ease-out'} ${containerWidths[size]} ${className}`}
     >
       <div className="flex items-center flex-nowrap whitespace-nowrap overflow-hidden">
         <div className="mr-1 sm:mr-2 text-drill-600 flex-shrink-0">
-          <Factory size={iconSizes[size]} className="animate-float" />
+          <Factory 
+            size={iconSizes[size]} 
+            className={`${isMobile ? 'animate-pulse' : 'animate-float'}`}
+            strokeWidth={isMobile ? 2.5 : 2}
+          />
         </div>
         <div className="flex flex-col items-start min-w-0 flex-1 overflow-hidden">
           <div className="flex w-full">
             <span className={`text-gradient font-cyber font-bold ${sizeClasses[size]} whitespace-nowrap overflow-hidden text-ellipsis`}>DRILL BABY DRILL</span>
           </div>
-          <div className="flex items-center -mt-1 w-full">
+          <div className="flex items-center -mt-0.5 sm:-mt-1 w-full">
             <span className={`text-energy-700 ${subtitleSizes[size]} font-normal whitespace-nowrap overflow-hidden text-ellipsis w-full`}>
               AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
             </span>

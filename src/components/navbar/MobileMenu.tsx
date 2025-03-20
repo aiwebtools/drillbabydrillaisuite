@@ -35,7 +35,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <button
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden text-white focus:outline-none p-2 touch-manipulation"
+          aria-label="Open menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -43,25 +44,26 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         </button>
       </SheetTrigger>
       <SheetContent side="left" className="p-0 w-[85%] max-w-xs bg-energy-950/95 backdrop-blur-lg border-energy-800">
-        <div className="py-4 px-4 border-b border-energy-800 flex items-center justify-between">
+        <div className="py-3 px-4 border-b border-energy-800 flex items-center justify-between">
           <CyberpunkLogo size="sm" />
           <button 
             onClick={() => setIsOpen(false)}
-            className="text-white focus:outline-none"
+            className="text-white focus:outline-none p-2 touch-manipulation"
+            aria-label="Close menu"
           >
             <X size={20} />
           </button>
         </div>
         
-        <ScrollArea className="h-[calc(100vh-80px)]">
-          <nav className="flex flex-col p-4">
+        <ScrollArea className="h-[calc(100vh-70px)]">
+          <nav className="flex flex-col p-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="text-white hover:text-cyan-400 transition-colors font-medium py-3 border-b border-energy-800 flex items-center"
+                className="text-white hover:text-cyan-400 active:bg-energy-800/40 transition-colors font-medium py-4 border-b border-energy-800 flex items-center px-1"
                 onClick={handleNavLinkClick}
               >
                 {link.name}
@@ -70,14 +72,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             ))}
             <div className="py-4">
               <div className="font-medium text-white mb-3">Select Oil & Gas AI:</div>
-              <div className="grid grid-cols-1 gap-y-3 pl-2">
+              <div className="grid grid-cols-1 gap-y-4 pl-2">
                 {toolLinks.map((tool, index) => (
                   <a
                     key={index}
                     href={tool.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-energy-300 hover:text-cyan-400 transition-colors text-sm flex items-center"
+                    className="text-energy-300 hover:text-cyan-400 active:text-cyan-500 transition-colors text-sm flex items-center"
                     onClick={handleNavLinkClick}
                   >
                     {tool.name}
@@ -86,10 +88,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 ))}
               </div>
             </div>
-            <div className="mt-4 pb-6">
+            <div className="mt-6 pb-10">
               <a
                 href="#tools"
-                className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 px-4 rounded-full font-medium block"
+                className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 px-6 rounded-full font-medium block active:opacity-90"
                 onClick={handleNavLinkClick}
               >
                 Compare Oil & Gas AI Tools

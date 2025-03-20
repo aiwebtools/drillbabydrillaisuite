@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Factory } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface CyberpunkLogoProps {
   size?: "sm" | "md" | "lg";
@@ -8,45 +9,48 @@ interface CyberpunkLogoProps {
 }
 
 const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className }) => {
+  const isMobile = useIsMobile();
+  
   const sizeClasses = {
-    sm: "text-sm sm:text-xl", // Reduced text size on mobile
-    md: "text-base sm:text-2xl", // Reduced text size on mobile
-    lg: "text-lg sm:text-3xl", // Reduced text size on mobile
+    sm: "text-xs sm:text-xl",
+    md: "text-sm sm:text-2xl",
+    lg: "text-base sm:text-3xl",
   };
 
   const subtitleSizes = {
-    sm: "text-[5px] sm:text-xs", // Further reduced for better mobile display
-    md: "text-[6px] sm:text-sm", // Further reduced for better mobile display
-    lg: "text-[8px] sm:text-base", // Further reduced for better mobile display
+    sm: "text-[6px] sm:text-xs",
+    md: "text-[7px] sm:text-sm",
+    lg: "text-[8px] sm:text-base",
   };
 
   const iconSizes = {
-    sm: 14,  // Reduced size for mobile
-    md: 18,  // Reduced size for mobile
-    lg: 22,  // Reduced size for mobile
+    sm: isMobile ? 12 : 14,
+    md: isMobile ? 14 : 18,
+    lg: isMobile ? 16 : 22,
   };
 
-  // Adjusted container width classes for better mobile display
+  // Optimized container width classes for mobile
   const containerWidths = {
-    sm: "max-w-[160px] sm:max-w-none", // Reduced from 180px
-    md: "max-w-[200px] sm:max-w-none", // Reduced from 220px
-    lg: "max-w-[240px] sm:max-w-none", // Reduced from 260px
+    sm: "max-w-[140px] sm:max-w-none", 
+    md: "max-w-[180px] sm:max-w-none",
+    lg: "max-w-[220px] sm:max-w-none",
   };
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
       <div className={`relative ${containerWidths[size]}`}>
-        {/* Glow effect */}
-        <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/50 to-purple-600/50 rounded-lg blur-xl opacity-70"></div>
+        {/* Optimized glow effect - reduced for mobile */}
+        <div className={`absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-cyan-500/40 to-purple-600/40 rounded-lg blur-md sm:blur-xl opacity-60 sm:opacity-70`}></div>
         
-        {/* Main logo container - improved overflow handling */}
-        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-1 sm:px-4 py-1 sm:py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20 overflow-hidden">
+        {/* Main logo container - improved for mobile */}
+        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-1 sm:px-4 py-0.5 sm:py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20 overflow-hidden">
           <div className="relative mr-1 sm:mr-3 flex-shrink-0">
-            {/* Icon glow */}
-            <div className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-50"></div>
+            {/* Optimized icon glow */}
+            <div className="absolute inset-0 bg-cyan-400 rounded-full blur-sm sm:blur-md opacity-40 sm:opacity-50"></div>
             <Factory 
               className="relative text-cyan-400 animate-pulse" 
               size={iconSizes[size]} 
+              strokeWidth={isMobile ? 2.5 : 2}
             />
           </div>
           
