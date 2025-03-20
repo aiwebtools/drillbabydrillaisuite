@@ -21,20 +21,27 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
   };
 
   const iconSizes = {
-    sm: 20,
-    md: 26,
-    lg: 32,
+    sm: 18,  // Reduced from 20
+    md: 24,  // Reduced from 26
+    lg: 30,  // Reduced from 32
+  };
+
+  // Added container width classes based on size
+  const containerWidths = {
+    sm: "max-w-[220px] sm:max-w-none",
+    md: "max-w-[260px] sm:max-w-none",
+    lg: "max-w-[300px] sm:max-w-none",
   };
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <div className="relative">
+      <div className={`relative ${containerWidths[size]}`}>
         {/* Glow effect */}
         <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/50 to-purple-600/50 rounded-lg blur-xl opacity-70"></div>
         
-        {/* Main logo container */}
-        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-2 sm:px-4 py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20">
-          <div className="relative mr-1.5 sm:mr-3">
+        {/* Main logo container - added overflow-hidden for mobile */}
+        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-1.5 sm:px-4 py-1.5 sm:py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20 overflow-hidden sm:overflow-visible">
+          <div className="relative mr-1 sm:mr-3 flex-shrink-0">
             {/* Icon glow */}
             <div className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-50"></div>
             <Drill 
@@ -43,12 +50,12 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
             />
           </div>
           
-          <div>
-            <h1 className={`font-cyber font-bold ${sizeClasses[size]} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600`}>
+          <div className="min-w-0 flex-1">
+            <h1 className={`font-cyber font-bold ${sizeClasses[size]} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 whitespace-nowrap overflow-hidden text-ellipsis`}>
               DRILL BABY DRILL
             </h1>
             <div className="flex justify-end">
-              <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono`}>
+              <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono whitespace-nowrap overflow-hidden text-ellipsis`}>
                 AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
               </p>
             </div>

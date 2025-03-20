@@ -40,7 +40,8 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
     { name: "Disclaimer", href: "#disclaimer" },
-    { name: "Contact", href: "#contact" },
+    // Changed "Contact" to just linking to the tools section
+    { name: "Compare Tools", href: "#tools" },
   ];
 
   const toolLinks = tools.map(tool => ({

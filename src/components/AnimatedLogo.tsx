@@ -14,24 +14,31 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   const logoRef = useRef<HTMLDivElement>(null);
   
   const sizeClasses = {
-    sm: "text-xl",
-    md: "text-2xl",
-    lg: "text-3xl",
-    xl: "text-4xl sm:text-5xl" // Responsive sizing for xl
+    sm: "text-base sm:text-xl", // Smaller on mobile
+    md: "text-lg sm:text-2xl",
+    lg: "text-xl sm:text-3xl",
+    xl: "text-2xl sm:text-5xl" 
   };
 
   const subtitleSizes = {
-    sm: "text-xs",
-    md: "text-sm",
-    lg: "text-base",
-    xl: "text-xs sm:text-sm md:text-lg" // Smaller on mobile for xl size
+    sm: "text-[8px] sm:text-xs", // Even smaller on mobile
+    md: "text-[10px] sm:text-sm",
+    lg: "text-xs sm:text-base",
+    xl: "text-xs sm:text-sm md:text-lg" 
   };
 
   const iconSizes = {
-    sm: 24,
-    md: 32,
-    lg: 40,
-    xl: 36
+    sm: 16, // Smaller icon on mobile
+    md: 20,
+    lg: 24,
+    xl: 28
+  };
+
+  const containerWidths = {
+    sm: "max-w-[180px] sm:max-w-none",
+    md: "max-w-[220px] sm:max-w-none",
+    lg: "max-w-[240px] sm:max-w-none",
+    xl: "max-w-[280px] sm:max-w-none",
   };
 
   useEffect(() => {
@@ -67,18 +74,18 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   return (
     <div 
       ref={logoRef}
-      className={`flex flex-col transition-transform duration-200 ease-out ${sizeClasses[size]} ${className}`}
+      className={`flex flex-col transition-transform duration-200 ease-out ${sizeClasses[size]} ${containerWidths[size]} ${className}`}
     >
-      <div className="flex items-center flex-nowrap whitespace-nowrap overflow-visible">
-        <div className="mr-2 text-drill-600 flex-shrink-0">
+      <div className="flex items-center flex-nowrap whitespace-nowrap overflow-hidden sm:overflow-visible">
+        <div className="mr-1 sm:mr-2 text-drill-600 flex-shrink-0">
           <Drill size={iconSizes[size]} className="animate-float" />
         </div>
-        <div className="flex flex-col items-start min-w-0">
-          <div className="flex">
-            <span className="text-gradient font-cyber font-bold whitespace-nowrap">DRILL BABY DRILL</span>
+        <div className="flex flex-col items-start min-w-0 flex-1 overflow-hidden">
+          <div className="flex w-full">
+            <span className="text-gradient font-cyber font-bold whitespace-nowrap overflow-hidden text-ellipsis">DRILL BABY DRILL</span>
           </div>
-          <div className="flex items-center -mt-1">
-            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal whitespace-nowrap`}>
+          <div className="flex items-center -mt-1 w-full">
+            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal whitespace-nowrap overflow-hidden text-ellipsis w-full`}>
               AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
             </span>
           </div>
