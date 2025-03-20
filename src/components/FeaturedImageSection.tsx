@@ -3,12 +3,12 @@ import React from "react";
 
 const FeaturedImageSection: React.FC = () => {
   return (
-    <section className="py-16 px-4 bg-energy-950 relative overflow-hidden">
+    <section className="py-8 px-4 bg-energy-950 relative overflow-hidden">
       <div className="container mx-auto max-w-5xl" data-animate="true">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-white">
           <span className="text-gradient">Advanced Reservoir Visualization</span>
         </h2>
-        <p className="text-lg text-energy-300 max-w-2xl mx-auto mb-8 text-center">
+        <p className="text-lg text-energy-300 max-w-2xl mx-auto mb-6 text-center">
           AI-generated field mapping and subsurface analysis for enhanced decision making
         </p>
         <div className="rounded-xl overflow-hidden shadow-lg shadow-drill-600/20 mx-auto">
