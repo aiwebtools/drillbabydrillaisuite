@@ -109,10 +109,10 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               </div>
             </div>
             <a 
-              href="#contact" 
+              href="#tools" 
               className="bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white px-4 py-2 rounded-full font-medium transition-colors shadow-lg shadow-purple-700/20 hover:shadow-xl hover:shadow-purple-700/40"
             >
-              Get Started
+              Compare Oil and Gas AI Tools
             </a>
           </nav>
 
@@ -172,11 +172,11 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                 </div>
               </div>
               <a
-                href="#contact"
+                href="#tools"
                 className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 rounded-full font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Get Started
+                Compare Oil and Gas AI Tools
               </a>
             </nav>
           </GlassCard>
