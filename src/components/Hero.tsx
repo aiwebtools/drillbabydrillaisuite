@@ -1,4 +1,3 @@
-
 import React from "react";
 import AnimatedLogo from "./AnimatedLogo";
 import { GlassCard } from "./ui-custom/GlassCard";
@@ -6,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-32 pb-20">
+    <section className="min-h-screen flex flex-col justify-center pt-40 md:pt-32 pb-20">
       <div className="container mx-auto px-4">
         <div className="section-animate flex flex-col items-center text-center mb-10">
           <AnimatedLogo size="xl" className="mb-8" />
