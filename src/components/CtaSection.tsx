@@ -16,7 +16,7 @@ const CtaSection: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#tools" className="btn-primary">
-              Compare Oil & Gas AI Tools
+              Compare
             </a>
             <a 
               href="https://www.aiwebtools.ai" 

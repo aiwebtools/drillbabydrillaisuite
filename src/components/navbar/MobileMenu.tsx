@@ -96,7 +96,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 className="bg-gradient-to-r from-cyan-600 to-purple-600 text-white text-center py-3 px-6 rounded-full font-medium block active:opacity-90"
                 onClick={handleNavLinkClick}
               >
-                Compare Oil & Gas AI Tools
+                Compare
               </a>
             </div>
           </nav>
