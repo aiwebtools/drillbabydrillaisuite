@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ExternalLink } from "lucide-react";
 import CyberpunkLogo from "./CyberpunkLogo";
@@ -127,7 +128,7 @@ const Footer: React.FC = () => {
               <a href="#faq" className="text-energy-400 hover:text-drill-400 transition-colors">FAQ</a>
               <a href="#disclaimer" className="text-energy-400 hover:text-drill-400 transition-colors">Disclaimer</a>
               <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Privacy Policy</a>
-              <a href="https://aiwebtools.ai/terms-of-services" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Terms of Service</a>
+              <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

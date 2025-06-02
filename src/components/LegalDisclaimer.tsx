@@ -1,4 +1,3 @@
-
 import React from "react";
 import { GlassCard } from "./ui-custom/GlassCard";
 
@@ -21,6 +20,12 @@ const LegalDisclaimer: React.FC = () => {
           data-animate="true"
         >
           <div className="space-y-6 text-energy-200">
+            <div className="bg-energy-800/30 border border-energy-700 rounded-lg p-4 mb-6">
+              <p className="text-amber-400 font-semibold text-center">
+                <strong>Notice:</strong> This content is provided for informational, educational, and research purposes only.
+              </p>
+            </div>
+
             <p>
               <strong className="text-white">No Professional Advice:</strong> DRILL BABY DRILL AI SUITE and its associated tools provide information for general purposes only. They do not constitute professional advice, recommendations, or services. Users should always consult with qualified professionals before making any operational, safety, financial, or legal decisions in the oil and gas industry.
             </p>
