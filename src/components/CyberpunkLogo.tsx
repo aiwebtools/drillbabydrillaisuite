@@ -12,28 +12,28 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
   const isMobile = useIsMobile();
   
   const sizeClasses = {
-    sm: "text-xs sm:text-xl",
-    md: "text-sm sm:text-2xl",
-    lg: "text-base sm:text-3xl",
+    sm: "text-xs sm:text-lg md:text-xl",
+    md: "text-sm sm:text-xl md:text-2xl",
+    lg: "text-base sm:text-2xl md:text-3xl",
   };
 
   const subtitleSizes = {
-    sm: "text-[7px] sm:text-xs",
-    md: "text-[8px] sm:text-sm",
-    lg: "text-[9px] sm:text-base",
+    sm: "text-[6px] sm:text-[10px] md:text-xs",
+    md: "text-[7px] sm:text-xs md:text-sm",
+    lg: "text-[8px] sm:text-sm md:text-base",
   };
 
   const iconSizes = {
-    sm: isMobile ? 14 : 14,
-    md: isMobile ? 16 : 18,
-    lg: isMobile ? 18 : 22,
+    sm: isMobile ? 12 : 16,
+    md: isMobile ? 14 : 20,
+    lg: isMobile ? 16 : 24,
   };
 
-  // Optimized container width classes for mobile
+  // Fixed container widths to prevent cutoff
   const containerWidths = {
-    sm: "w-auto min-w-[140px] sm:min-w-[160px]", 
-    md: "w-auto min-w-[170px] sm:min-w-[180px]",
-    lg: "w-auto min-w-[200px] sm:min-w-[220px]",
+    sm: "w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px]", 
+    md: "w-full max-w-[220px] sm:max-w-[260px] md:max-w-[320px]",
+    lg: "w-full max-w-[260px] sm:max-w-[300px] md:max-w-[360px]",
   };
 
   return (
@@ -43,8 +43,8 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
         <div className={`absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-cyan-500/40 to-purple-600/40 rounded-lg blur-md sm:blur-xl opacity-60 sm:opacity-70`}></div>
         
         {/* Main logo container - improved for mobile */}
-        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-2 sm:px-4 py-1 sm:py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20">
-          <div className="relative mr-2 sm:mr-3 flex-shrink-0">
+        <div className="relative flex items-center bg-energy-900/80 rounded-lg px-2 sm:px-3 md:px-4 py-1 sm:py-2 border border-cyan-500/30 shadow-lg shadow-purple-600/20">
+          <div className="relative mr-1 sm:mr-2 md:mr-3 flex-shrink-0">
             {/* Optimized icon glow */}
             <div className="absolute inset-0 bg-cyan-400 rounded-full blur-sm sm:blur-md opacity-40 sm:opacity-50"></div>
             <Factory 
@@ -54,12 +54,12 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
             />
           </div>
           
-          <div className="min-w-0 flex-grow">
-            <h1 className={`font-cyber font-bold ${sizeClasses[size]} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 truncate`}>
+          <div className="min-w-0 flex-grow overflow-hidden">
+            <h1 className={`font-cyber font-bold ${sizeClasses[size]} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 whitespace-nowrap overflow-hidden`}>
               DRILL BABY DRILL
             </h1>
-            <div className="flex justify-end w-full">
-              <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono truncate`}>
+            <div className="flex justify-end w-full overflow-hidden">
+              <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono whitespace-nowrap overflow-hidden text-ellipsis`}>
                 AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
               </p>
             </div>

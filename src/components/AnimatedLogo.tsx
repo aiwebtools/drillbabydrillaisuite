@@ -16,31 +16,31 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   const isMobile = useIsMobile();
   
   const sizeClasses = {
-    sm: "text-xs sm:text-xl",
-    md: "text-sm sm:text-2xl", 
-    lg: "text-base sm:text-3xl",
-    xl: "text-lg sm:text-5xl"
+    sm: "text-xs sm:text-lg md:text-xl",
+    md: "text-sm sm:text-xl md:text-2xl", 
+    lg: "text-base sm:text-2xl md:text-3xl",
+    xl: "text-lg sm:text-3xl md:text-5xl"
   };
 
   const subtitleSizes = {
-    sm: "text-[7px] sm:text-xs",
-    md: "text-[8px] sm:text-sm",
-    lg: "text-[9px] sm:text-base",
-    xl: "text-[10px] sm:text-sm md:text-lg"
+    sm: "text-[6px] sm:text-[10px] md:text-xs",
+    md: "text-[7px] sm:text-xs md:text-sm",
+    lg: "text-[8px] sm:text-sm md:text-base",
+    xl: "text-[9px] sm:text-sm md:text-lg"
   };
 
   const iconSizes = {
-    sm: isMobile ? 14 : 12,
-    md: isMobile ? 16 : 16,
-    lg: isMobile ? 18 : 18,
-    xl: isMobile ? 20 : 20
+    sm: isMobile ? 12 : 14,
+    md: isMobile ? 14 : 18,
+    lg: isMobile ? 16 : 20,
+    xl: isMobile ? 18 : 24
   };
 
   const containerWidths = {
-    sm: "w-auto min-w-[140px] sm:min-w-[160px]",
-    md: "w-auto min-w-[170px] sm:min-w-[180px]",
-    lg: "w-auto min-w-[200px] sm:min-w-[220px]",
-    xl: "w-auto min-w-[220px] sm:min-w-[240px]",
+    sm: "w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px]",
+    md: "w-full max-w-[220px] sm:max-w-[260px] md:max-w-[320px]",
+    lg: "w-full max-w-[260px] sm:max-w-[300px] md:max-w-[360px]",
+    xl: "w-full max-w-[300px] sm:max-w-[340px] md:max-w-[400px]",
   };
 
   useEffect(() => {
@@ -78,8 +78,8 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
       ref={logoRef}
       className={`flex flex-col ${isMobile ? '' : 'transition-transform duration-200 ease-out'} ${containerWidths[size]} ${className}`}
     >
-      <div className="flex items-center flex-nowrap w-full">
-        <div className="mr-2 sm:mr-2 text-drill-600 flex-shrink-0">
+      <div className="flex items-center flex-nowrap w-full overflow-hidden">
+        <div className="mr-1 sm:mr-2 text-drill-600 flex-shrink-0">
           <Factory 
             size={iconSizes[size]} 
             className={`${isMobile ? 'animate-pulse' : 'animate-float'}`}
@@ -87,11 +87,11 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
           />
         </div>
         <div className="flex flex-col items-start min-w-0 flex-grow overflow-hidden">
-          <div className="flex w-full">
-            <span className={`text-gradient font-cyber font-bold ${sizeClasses[size]} truncate w-full`}>DRILL BABY DRILL</span>
+          <div className="flex w-full overflow-hidden">
+            <span className={`text-gradient font-cyber font-bold ${sizeClasses[size]} whitespace-nowrap overflow-hidden w-full`}>DRILL BABY DRILL</span>
           </div>
-          <div className="flex items-center -mt-0.5 sm:-mt-1 w-full">
-            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal truncate w-full`}>
+          <div className="flex items-center -mt-0.5 sm:-mt-1 w-full overflow-hidden">
+            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal whitespace-nowrap overflow-hidden text-ellipsis w-full`}>
               AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
             </span>
           </div>
