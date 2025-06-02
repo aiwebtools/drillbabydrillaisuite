@@ -27,7 +27,7 @@ const NavbarContainer: React.FC<NavbarContainerProps> = ({
           variant="dark"
           intensity={scrolled ? "medium" : "low"}
           className={cn(
-            "flex items-center justify-between py-2 px-2 sm:px-4 transition-all duration-300 border-cyber-light/20",
+            "flex items-center justify-between py-2 px-2 sm:px-4 transition-all duration-300 border-cyber-light/20 overflow-visible",
             scrolled ? "shadow-[0_0_15px_rgba(0,255,255,0.15)]" : ""
           )}
         >

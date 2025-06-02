@@ -57,20 +57,20 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
   return (
     <NavbarContainer scrolled={scrolled} className={className}>
-      <div className="flex items-center overflow-hidden">
-        <div className="ml-1 sm:ml-0 flex-shrink-0">
+      <div className="flex items-center min-w-0 flex-shrink-0 overflow-visible">
+        <div className="overflow-visible">
           <CyberpunkLogo size="sm" />
         </div>
       </div>
 
-      <nav className="hidden md:flex items-center space-x-6">
+      <nav className="hidden md:flex items-center space-x-6 flex-shrink-0">
         <NavLinks links={navLinks} />
         <ToolsDropdown toolLinks={toolLinks} />
         <CompareToolsButton />
       </nav>
 
       {/* Mobile menu trigger and content */}
-      <div className="md:hidden">
+      <div className="md:hidden flex-shrink-0">
         <MobileMenu
           isOpen={mobileMenuOpen}
           setIsOpen={setMobileMenuOpen}
