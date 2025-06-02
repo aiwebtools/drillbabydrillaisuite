@@ -29,11 +29,11 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
     lg: isMobile ? 16 : 24,
   };
 
-  // Fixed container widths to prevent cutoff
+  // Increased container widths to prevent text cutoff
   const containerWidths = {
-    sm: "w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px]", 
-    md: "w-full max-w-[220px] sm:max-w-[260px] md:max-w-[320px]",
-    lg: "w-full max-w-[260px] sm:max-w-[300px] md:max-w-[360px]",
+    sm: "w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]", 
+    md: "w-full max-w-[320px] sm:max-w-[380px] md:max-w-[450px]",
+    lg: "w-full max-w-[380px] sm:max-w-[420px] md:max-w-[500px]",
   };
 
   return (
@@ -54,12 +54,12 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
             />
           </div>
           
-          <div className="min-w-0 flex-grow overflow-hidden">
-            <h1 className={`font-cyber font-bold ${sizeClasses[size]} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 whitespace-nowrap overflow-hidden`}>
+          <div className="min-w-0 flex-grow">
+            <h1 className={`font-cyber font-bold ${sizeClasses[size]} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 whitespace-nowrap`}>
               DRILL BABY DRILL
             </h1>
-            <div className="flex justify-end w-full overflow-hidden">
-              <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono whitespace-nowrap overflow-hidden text-ellipsis`}>
+            <div className="flex justify-start w-full">
+              <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono whitespace-nowrap text-ellipsis overflow-hidden`}>
                 AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
               </p>
             </div>
