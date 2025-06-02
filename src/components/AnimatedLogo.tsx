@@ -36,14 +36,6 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
     xl: isMobile ? 18 : 24
   };
 
-  // Increased container widths to prevent text cutoff
-  const containerWidths = {
-    sm: "w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]",
-    md: "w-full max-w-[320px] sm:max-w-[380px] md:max-w-[450px]",
-    lg: "w-full max-w-[380px] sm:max-w-[420px] md:max-w-[500px]",
-    xl: "w-full max-w-[420px] sm:max-w-[480px] md:max-w-[600px]",
-  };
-
   useEffect(() => {
     const logo = logoRef.current;
     if (!logo || isMobile) return; // Skip effect on mobile for better performance
@@ -77,7 +69,7 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
   return (
     <div 
       ref={logoRef}
-      className={`flex flex-col ${isMobile ? '' : 'transition-transform duration-200 ease-out'} ${containerWidths[size]} ${className}`}
+      className={`flex flex-col w-full ${isMobile ? '' : 'transition-transform duration-200 ease-out'} ${className}`}
     >
       <div className="flex items-center flex-nowrap w-full">
         <div className="mr-1 sm:mr-2 text-drill-600 flex-shrink-0">
@@ -87,12 +79,12 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
             strokeWidth={isMobile ? 2.5 : 2}
           />
         </div>
-        <div className="flex flex-col items-start min-w-0 flex-grow">
-          <div className="flex w-full">
-            <span className={`text-gradient font-cyber font-bold ${sizeClasses[size]} whitespace-nowrap w-full`}>DRILL BABY DRILL</span>
+        <div className="flex flex-col items-start flex-grow min-w-0">
+          <div className="w-full">
+            <span className={`text-gradient font-cyber font-bold ${sizeClasses[size]} whitespace-nowrap block`}>DRILL BABY DRILL</span>
           </div>
-          <div className="flex items-center -mt-0.5 sm:-mt-1 w-full">
-            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal whitespace-nowrap text-ellipsis overflow-hidden w-full`}>
+          <div className="w-full -mt-0.5 sm:-mt-1">
+            <span className={`text-energy-700 ${subtitleSizes[size]} font-normal whitespace-nowrap text-ellipsis overflow-hidden block`}>
               AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
             </span>
           </div>

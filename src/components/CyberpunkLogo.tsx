@@ -29,16 +29,9 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
     lg: isMobile ? 16 : 24,
   };
 
-  // Increased container widths to prevent text cutoff
-  const containerWidths = {
-    sm: "w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]", 
-    md: "w-full max-w-[320px] sm:max-w-[380px] md:max-w-[450px]",
-    lg: "w-full max-w-[380px] sm:max-w-[420px] md:max-w-[500px]",
-  };
-
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <div className={`relative ${containerWidths[size]}`}>
+      <div className="relative w-full">
         {/* Optimized glow effect - reduced for mobile */}
         <div className={`absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-cyan-500/40 to-purple-600/40 rounded-lg blur-md sm:blur-xl opacity-60 sm:opacity-70`}></div>
         
@@ -54,11 +47,11 @@ const CyberpunkLogo: React.FC<CyberpunkLogoProps> = ({ size = "md", className })
             />
           </div>
           
-          <div className="min-w-0 flex-grow">
+          <div className="flex-grow min-w-0">
             <h1 className={`font-cyber font-bold ${sizeClasses[size]} text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 whitespace-nowrap`}>
               DRILL BABY DRILL
             </h1>
-            <div className="flex justify-start w-full">
+            <div className="w-full">
               <p className={`${subtitleSizes[size]} text-cyan-300/70 tracking-wider font-mono whitespace-nowrap text-ellipsis overflow-hidden`}>
                 AI TOOLS SUITE FOR THE OIL AND GAS INDUSTRY
               </p>
