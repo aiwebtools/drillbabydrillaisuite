@@ -11,22 +11,26 @@ const Hero: React.FC = () => {
           <AnimatedLogo size="xl" className="mb-8" />
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto text-balance">
-            <span className="text-gradient">Revolutionary AI Suite</span> for the 
-            <span className="text-energy-800"> Oil & Gas Industry</span>
+            <span className="text-gradient">Best AI Web Tools for Oil & Gas</span> - 
+            <span className="text-energy-800"> AIWEBTOOLS.AI</span>
           </h1>
           
+          <h2 className="text-lg sm:text-xl md:text-2xl text-energy-600 max-w-3xl mx-auto mb-4 text-balance font-semibold">
+            Revolutionary AI Tools Suite: 10 Specialized AI Tools for Drilling, Safety & Optimization
+          </h2>
+          
           <p className="text-base sm:text-lg md:text-xl text-energy-600 max-w-3xl mx-auto mb-8 text-balance">
-            Unleashing a suite of 10 advanced AI tools tailored specifically for the oil & gas sector, 
-            designed to transform operations, streamline processes, and fuel sustainable growth.
+            Discover the most advanced AI web tools designed specifically for oil & gas operations. 
+            Compare top AI tools for drilling optimization, safety compliance, and energy sector automation at AIWEBTOOLS.AI.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mt-2 mb-6">
             <a href="#tools" className="btn-primary flex items-center justify-center">
-              Explore Tools
+              Explore AI Tools
               <ChevronRight className="ml-1 h-4 w-4" />
             </a>
             <a href="#tools" className="btn-secondary">
-              Compare Oil & Gas AI Tools
+              Compare AI Web Tools
             </a>
           </div>
         </div>
@@ -44,10 +48,10 @@ const Hero: React.FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-energy-900">
-              Optimize Performance
+              AI-Powered Performance Optimization
             </h3>
             <p className="text-energy-600">
-              Harness AI-driven analytics to maximize operational efficiency, reduce downtime, and improve financial outcomes across your energy operations.
+              Harness cutting-edge AI tools to maximize operational efficiency, reduce downtime, and improve ROI across your energy operations with AIWEBTOOLS.AI solutions.
             </p>
           </GlassCard>
 
@@ -59,10 +63,10 @@ const Hero: React.FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-energy-900">
-              Sustainable Operations
+              Sustainable AI Web Tools
             </h3>
             <p className="text-energy-600">
-              Implement cutting-edge sustainability practices with AI tools designed to minimize environmental impact while maintaining productivity.
+              Implement industry-leading sustainability practices with specialized AI tools designed to minimize environmental impact while maintaining peak productivity.
             </p>
           </GlassCard>
 
@@ -74,10 +78,10 @@ const Hero: React.FC = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-energy-900">
-              Enhanced Safety
+              Advanced Safety AI Tools
             </h3>
             <p className="text-energy-600">
-              Prioritize workforce safety with predictive risk management, automated monitoring systems, and AI-powered safety protocols for all operations.
+              Prioritize workforce safety with predictive AI tools, automated monitoring systems, and intelligent safety protocols for all oil & gas operations.
             </p>
           </GlassCard>
         </div>

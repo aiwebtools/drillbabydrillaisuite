@@ -8,14 +8,18 @@ const FeaturedImageSection: React.FC = () => {
         <div className="rounded-xl overflow-hidden shadow-lg shadow-drill-600/20 mx-auto">
           <img 
             src="https://ideogram.ai/assets/image/lossless/response/lmQ_XQgaTge4ZGsQnt1UWg" 
-            alt="Oil and gas industry visualization" 
+            alt="AI tools for oil and gas industry - drilling optimization and energy sector automation by AIWEBTOOLS.AI" 
             className="w-full h-auto" 
           />
         </div>
         
         <h2 className="text-3xl md:text-4xl font-bold mt-12 mb-4 text-center text-white">
-          <span className="text-gradient">Revolutionizing The Oil & Gas Industry Since 2025</span>
+          <span className="text-gradient">Leading AI Web Tools Provider for Oil & Gas Since 2025</span>
         </h2>
+        <p className="text-lg text-energy-300 max-w-3xl mx-auto text-center">
+          AIWEBTOOLS.AI has been revolutionizing the energy sector with cutting-edge AI tools designed specifically 
+          for oil & gas operations, safety management, and drilling optimization.
+        </p>
       </div>
       
       {/* Background elements */}
