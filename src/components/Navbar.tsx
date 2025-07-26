@@ -7,6 +7,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import NavbarContainer from "./navbar/NavbarContainer";
 import NavLinks from "./navbar/NavLinks";
 import ToolsDropdown from "./navbar/ToolsDropdown";
+import ToolsAccordion from "./navbar/ToolsAccordion";
 import CompareToolsButton from "./navbar/CompareToolsButton";
 import MobileMenu from "./navbar/MobileMenu";
 
@@ -40,7 +41,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       href: "https://www.aiwebtools.ai",
       external: true 
     },
-    { name: "How It Works", href: "#how-it-works" },
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
     { name: "Disclaimer", href: "#disclaimer" },
@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
       <nav className="hidden md:flex items-center space-x-6 flex-shrink-0">
         <NavLinks links={navLinks} />
-        <ToolsDropdown toolLinks={toolLinks} />
+        <ToolsAccordion />
         <CompareToolsButton />
       </nav>
 

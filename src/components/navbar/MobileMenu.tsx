@@ -3,6 +3,8 @@ import React from "react";
 import { X, ExternalLink } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { ScrollArea } from "../ui/scroll-area";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { tools } from "@/lib/tools";
 import CyberpunkLogo from "../CyberpunkLogo";
 
 interface NavLink {
@@ -73,22 +75,48 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
               </a>
             ))}
             <div className="py-4">
-              <div className="font-medium text-white mb-3">Select Oil & Gas AI:</div>
-              <div className="grid grid-cols-1 gap-y-4 pl-2">
-                {toolLinks.map((tool, index) => (
-                  <a
-                    key={index}
-                    href={tool.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-energy-300 hover:text-cyan-400 active:text-cyan-500 transition-colors text-sm flex items-center"
-                    onClick={handleNavLinkClick}
-                  >
-                    {tool.name}
-                    <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
+              <div className="font-medium text-white mb-3">AI Tools:</div>
+              <Accordion type="single" collapsible className="w-full">
+                {Object.entries({
+                  "Training & Management": [1],
+                  "Technology & Innovation": [2],
+                  "Logistics & Operations": [3, 7, 9],
+                  "Sustainability & Environment": [4, 11],
+                  "Compliance & Finance": [5, 6],
+                  "Safety & Exploration": [8, 10],
+                }).map(([category, toolIds]) => (
+                  <AccordionItem key={category} value={category} className="border-energy-800">
+                    <AccordionTrigger className="text-energy-200 hover:text-cyan-400 py-2 text-sm font-medium hover:no-underline">
+                      {category}
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-2">
+                      <div className="space-y-2 pl-2">
+                        {toolIds.map((toolId) => {
+                          const tool = tools.find(t => t.id === toolId);
+                          if (!tool) return null;
+                          
+                          return (
+                            <a
+                              key={tool.id}
+                              href={tool.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-between text-energy-300 hover:text-cyan-400 transition-colors text-xs py-2"
+                              onClick={handleNavLinkClick}
+                            >
+                              <div className="flex items-center gap-2">
+                                <tool.icon className="w-3 h-3" />
+                                <span>{tool.name}</span>
+                              </div>
+                              <ExternalLink className="w-3 h-3 flex-shrink-0" />
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </div>
             <div className="mt-6 pb-10">
               <a
