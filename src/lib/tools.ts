@@ -2,7 +2,7 @@
 import { LucideIcon } from "lucide-react";
 import { 
   GraduationCap, Cpu, Truck, Leaf, ShieldCheck, 
-  BarChart3, Settings, ShieldAlert, Drill, Globe 
+  BarChart3, Settings, ShieldAlert, Drill, Globe, Recycle 
 } from "lucide-react";
 
 export interface Tool {
@@ -86,6 +86,23 @@ export const tools: Tool[] = [
     color: "green-600",
     iconBg: "bg-green-100",
     primaryColor: "text-green-600",
+  },
+  {
+    id: 11,
+    name: "Plastoline GPT",
+    description: "Revolutionary plastic waste to fuel conversion technology, providing innovative solutions for transforming plastic waste into usable energy sources and sustainable fuel alternatives.",
+    shortDescription: "Transform plastic waste into usable fuel for sustainable energy",
+    icon: Recycle,
+    features: [
+      "Plastic Waste Assessment & Analysis",
+      "Fuel Conversion Process Optimization",
+      "Sustainable Energy Solutions",
+      "Environmental Impact Reduction",
+    ],
+    link: "https://chatgpt.com/g/g-68853f78b2988191a919e23f74d724b1-plastic-to-fuel-plastoline-julian-brown",
+    color: "teal-600",
+    iconBg: "bg-teal-100",
+    primaryColor: "text-teal-600",
   },
   {
     id: 5,
