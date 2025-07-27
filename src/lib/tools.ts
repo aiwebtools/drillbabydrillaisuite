@@ -99,7 +99,7 @@ export const tools: Tool[] = [
       "Sustainable Energy Solutions",
       "Environmental Impact Reduction",
     ],
-    link: "https://chatgpt.com/g/g-68853f78b2988191a919e23f74d724b1-plastic-to-fuel-plastoline-julian-brown",
+    link: "https://plastolinegpt.lovable.app/?via=aiwebtools",
     color: "teal-600",
     iconBg: "bg-teal-100",
     primaryColor: "text-teal-600",
