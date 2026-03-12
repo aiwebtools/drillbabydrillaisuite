@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-energy-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-energy-400 text-center md:text-left mb-4 md:mb-0">
-              &copy; {currentYear} <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-drill-400 transition-colors">AI WEB TOOLS LLC</a>. All rights reserved.
+              &copy; {currentYear} <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-drill-400 transition-colors">AI WEB TOOLS LLC</a>. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <a href="#faq" className="text-energy-400 hover:text-drill-400 transition-colors">FAQ</a>
