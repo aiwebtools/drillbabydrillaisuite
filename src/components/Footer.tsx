@@ -125,11 +125,11 @@ const Footer: React.FC = () => {
             <p className="text-energy-400 text-center md:text-left mb-4 md:mb-0">
               &copy; {currentYear} <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-drill-400 transition-colors">AI WEB TOOLS LLC</a>. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6">
-              <a href="#faq" className="text-energy-400 hover:text-drill-400 transition-colors">FAQ</a>
-              <a href="#disclaimer" className="text-energy-400 hover:text-drill-400 transition-colors">Disclaimer</a>
-              <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Privacy Policy</a>
-              <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Terms of Service</a>
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-4">
+              <a href="#faq" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">FAQ</a>
+              <a href="#disclaimer" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">Disclaimer</a>
+              <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">Privacy Policy</a>
+              <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">Terms of Service</a>
             </div>
           </div>
         </div>
