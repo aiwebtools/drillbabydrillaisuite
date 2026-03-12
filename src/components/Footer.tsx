@@ -135,12 +135,12 @@ const Footer: React.FC = () => {
         </div>
       </div>
       
-      <div className="fixed bottom-8 right-8">
+      <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-40">
         <a 
           href="https://aiwebtools.lovable.app/?via=aiwebtools" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center px-5 py-3 rounded-full bg-drill-600 hover:bg-drill-500 text-white font-medium transition-all hover:shadow-lg"
+          className="flex items-center justify-center px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-drill-600 hover:bg-drill-500 text-white font-medium transition-all hover:shadow-lg text-sm sm:text-base"
         >
           More AI Tools
           <ExternalLink className="ml-2 h-4 w-4" />
