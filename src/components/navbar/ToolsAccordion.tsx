@@ -69,7 +69,7 @@ const ToolsAccordion: React.FC = () => {
           
           <div className="mt-2 pt-2 border-t border-energy-800">
             <a
-              href="https://www.aiwebtools.ai"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 text-energy-200 hover:text-cyan-400 transition-colors text-xs py-2"
