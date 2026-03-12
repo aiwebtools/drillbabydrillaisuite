@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
     { name: "PetroTech Innovator GPT", url: "https://chatgpt.com/g/g-67db7f6195848191ae0c02dddfb3b1d9-petrotech-innovator-gpt" },
     { name: "OilLogistics GPT", url: "https://chatgpt.com/g/g-67db7da1ea288191856f5c5a58362a62-oillogistics-gpt" },
     { name: "GreenDrill GPT", url: "https://chatgpt.com/g/g-67db7bcdb97481919a202f3ab2200e45-greendrill-gpt" },
-    { name: "Plastoline GPT", url: "https://chatgpt.com/g/g-68853f78b2988191a919e23f74d724b1-plastic-to-fuel-plastoline-julian-brown" },
+    { name: "Plastoline GPT", url: "https://plastolinegpt.lovable.app/?via=aiwebtools" },
     { name: "PetroCompliance GPT", url: "https://chatgpt.com/g/g-67db796e1664819193bb1fdda36c81e3-petrocompliance-gpt" },
     { name: "PetroFinancial GPT", url: "https://chatgpt.com/g/g-67db7707cfbc8191ac34069dd0664e51-petrofinancial-gpt" },
     { name: "RigMaster GPT", url: "https://chatgpt.com/g/g-67db7297b9ac8191a41e30599e0b5352-rigmaster-gpt" },
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
               </a>
               <div className="pt-4">
                 <a 
-                  href="https://aiwebtools.ai" 
+                  href="https://aiwebtools.lovable.app/?via=aiwebtools" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-drill-600 hover:bg-drill-500 text-white font-medium transition-colors"
@@ -123,24 +123,24 @@ const Footer: React.FC = () => {
         <div className="border-t border-energy-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-energy-400 text-center md:text-left mb-4 md:mb-0">
-              &copy; {currentYear} <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-drill-400 transition-colors">AI WEB TOOLS LLC</a>. All rights reserved.
+              &copy; {currentYear} <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-drill-400 transition-colors">AI WEB TOOLS LLC</a>. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6">
-              <a href="#faq" className="text-energy-400 hover:text-drill-400 transition-colors">FAQ</a>
-              <a href="#disclaimer" className="text-energy-400 hover:text-drill-400 transition-colors">Disclaimer</a>
-              <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Privacy Policy</a>
-              <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors">Terms of Service</a>
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-4">
+              <a href="#faq" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">FAQ</a>
+              <a href="#disclaimer" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">Disclaimer</a>
+              <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">Privacy Policy</a>
+              <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" className="text-energy-400 hover:text-drill-400 transition-colors text-sm">Terms of Service</a>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="fixed bottom-8 right-8">
+      <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-40">
         <a 
-          href="https://www.aiwebtools.ai" 
+          href="https://aiwebtools.lovable.app/?via=aiwebtools" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center px-5 py-3 rounded-full bg-drill-600 hover:bg-drill-500 text-white font-medium transition-all hover:shadow-lg"
+          className="flex items-center justify-center px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-drill-600 hover:bg-drill-500 text-white font-medium transition-all hover:shadow-lg text-sm sm:text-base"
         >
           More AI Tools
           <ExternalLink className="ml-2 h-4 w-4" />

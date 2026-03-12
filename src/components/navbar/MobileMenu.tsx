@@ -45,7 +45,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           </svg>
         </button>
       </SheetTrigger>
-      <SheetContent side="left" className="p-0 w-[85%] max-w-xs bg-energy-950/95 backdrop-blur-lg border-energy-800">
+      <SheetContent side="left" className="p-0 w-[85%] max-w-xs bg-energy-950/95 backdrop-blur-lg border-energy-800 will-change-transform">
         <div className="py-3 px-4 border-b border-energy-800 flex items-center justify-between">
           <div className="flex-grow flex justify-start">
             <CyberpunkLogo size="sm" />

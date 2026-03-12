@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     { name: "Home", href: "#" },
     { 
       name: "More AI Tools", 
-      href: "https://www.aiwebtools.ai",
+      href: "https://aiwebtools.lovable.app/?via=aiwebtools",
       external: true 
     },
     { name: "About", href: "#about" },
