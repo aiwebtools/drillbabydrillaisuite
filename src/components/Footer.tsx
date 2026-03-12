@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
     { name: "PetroTech Innovator GPT", url: "https://chatgpt.com/g/g-67db7f6195848191ae0c02dddfb3b1d9-petrotech-innovator-gpt" },
     { name: "OilLogistics GPT", url: "https://chatgpt.com/g/g-67db7da1ea288191856f5c5a58362a62-oillogistics-gpt" },
     { name: "GreenDrill GPT", url: "https://chatgpt.com/g/g-67db7bcdb97481919a202f3ab2200e45-greendrill-gpt" },
-    { name: "Plastoline GPT", url: "https://chatgpt.com/g/g-68853f78b2988191a919e23f74d724b1-plastic-to-fuel-plastoline-julian-brown" },
+    { name: "Plastoline GPT", url: "https://plastolinegpt.lovable.app/?via=aiwebtools" },
     { name: "PetroCompliance GPT", url: "https://chatgpt.com/g/g-67db796e1664819193bb1fdda36c81e3-petrocompliance-gpt" },
     { name: "PetroFinancial GPT", url: "https://chatgpt.com/g/g-67db7707cfbc8191ac34069dd0664e51-petrofinancial-gpt" },
     { name: "RigMaster GPT", url: "https://chatgpt.com/g/g-67db7297b9ac8191a41e30599e0b5352-rigmaster-gpt" },
